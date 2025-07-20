@@ -257,45 +257,6 @@
             text-align: left;
         }
 
-        /* Partners Section */
-        .partners-section {
-            background: #f8f9fa;
-            padding: 80px 0;
-        }
-
-        .partners-section h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #333;
-        }
-
-        .partners-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .partner-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .partner-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .partner-card h4 {
-            color: #333;
-            font-size: 1rem;
-            margin-top: 1rem;
-        }
-
         /* Benefits Section */
         .benefits {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -326,6 +287,46 @@
         .benefit-item h4 {
             font-size: 1.3rem;
             margin-bottom: 1rem;
+        }
+
+        /* Logo Ticker */
+        .logo-ticker {
+            background: #87ceeb; /* Light blue background */
+            height: 36px; /* 1/2 inch = 36px */
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            border-top: 1px solid #5dade2;
+            border-bottom: 1px solid #5dade2;
+        }
+
+        .logo-ticker-content {
+            display: inline-block;
+            animation: scroll-left 60s linear infinite;
+            height: 100%;
+            line-height: 36px;
+        }
+
+        .logo-ticker img {
+            height: 30px; /* Slightly smaller than container for padding */
+            width: auto;
+            margin: 3px 20px; /* Vertical centering and horizontal spacing */
+            vertical-align: middle;
+            filter: brightness(0.8); /* Slightly darken logos for better visibility */
+        }
+
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Pause animation on hover */
+        .logo-ticker:hover .logo-ticker-content {
+            animation-play-state: paused;
         }
 
         /* Footer */
@@ -400,12 +401,13 @@
                 grid-template-columns: 1fr;
             }
 
-            .partners-grid {
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            }
-
             .widget-tabs {
                 flex-direction: column;
+            }
+
+            .logo-ticker img {
+                height: 25px;
+                margin: 5.5px 15px;
             }
         }
 
@@ -434,7 +436,6 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About Me</a></li>
-                <li><a href="#partners">My Partners</a></li>
                 <li><a href="#quote">Get Quote</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -532,65 +533,6 @@
         </div>
     </section>
 
-    <!-- Partners Section -->
-    <section class="partners-section" id="partners">
-        <div class="container">
-            <h2>My Insurance Partners</h2>
-            <p style="text-align: center; font-size: 1.2rem; color: #666; margin-bottom: 2rem;">I work with over 15 top-rated insurance carriers to find you the best coverage and rates</p>
-            
-            <div class="partners-grid">
-                <div class="partner-card">
-                    <h4>Mutual of Omaha</h4>
-                </div>
-                <div class="partner-card">
-                    <h4>AIG (American International Group)</h4>
-                </div>
-                <div class="partner-card">
-                    <h4>Foresters Financial</h4>
-                </div>
-                <div class="partner-card">
-                    <h4>Gerber Life Insurance</h4>
-                </div>
-                <div class="partner-card">
-                    <h4>CICA Life of America</h4>
-                </div>
-                <div class="partner-card">
-                    <h4>American-Amicable</h4>
-                </div>
-                <div class="partner-card">
-                    <h4>American Amicable Group</h4>
-                </div>
-                <div class="partner-card">
-                    <h4>Transamerica</h4>
-                </div>
-                <div class="partner-card">
-                    <h4>GTL (Guarantee Trust Life)</h4>
-                </div>
-                <div class="partner-card">
-                    <h4>SBLI (Savings Bank Life Insurance)</h4>
-                </div>
-                <div class="partner-card">
-                    <h4>Royal Neighbors of America</h4>
-                </div>
-                <div class="partner-card">
-                    <h4>Corebridge Financial</h4>
-                </div>
-                <div class="partner-card">
-                    <h4>Protective</h4>
-                </div>
-                <div class="partner-card">
-                    <h4>Sentinel Security Life</h4>
-                </div>
-                <div class="partner-card">
-                    <h4>Liberty Bankers Life Insurance</h4>
-                </div>
-                <div class="partner-card">
-                    <h4>Aflac</h4>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Benefits Section -->
     <section class="benefits" id="products">
         <div class="container">
@@ -624,6 +566,45 @@
         </div>
     </section>
 
+    <!-- Logo Ticker -->
+    <div class="logo-ticker">
+        <div class="logo-ticker-content">
+            <img src="logos/Mutual-of-Omaha.png" alt="Mutual of Omaha">
+            <img src="logos/AIG.png" alt="AIG">
+            <img src="logos/Foresters-Financial.png" alt="Foresters Financial">
+            <img src="logos/Gerber-Life-Insurance.png" alt="Gerber Life Insurance">
+            <img src="logos/CICA-Life-of-America.png" alt="CICA Life of America">
+            <img src="logos/American-Amicable.png" alt="American-Amicable">
+            <img src="logos/American-Amicable-Group.png" alt="American Amicable Group">
+            <img src="logos/Transamerica.png" alt="Transamerica">
+            <img src="logos/GTL.png" alt="GTL">
+            <img src="logos/SBLI.png" alt="SBLI">
+            <img src="logos/Royal-Neighbors-of-America.png" alt="Royal Neighbors of America">
+            <img src="logos/Corebridge-Financial.png" alt="Corebridge Financial">
+            <img src="logos/Protective.png" alt="Protective">
+            <img src="logos/Sentinel-Security-Life.png" alt="Sentinel Security Life">
+            <img src="logos/Liberty-Bankers-Life-Insurance-Company.png" alt="Liberty Bankers Life Insurance Company">
+            <img src="logos/Aflac.png" alt="Aflac">
+            <!-- Duplicate the logos for seamless loop -->
+            <img src="logos/Mutual-of-Omaha.png" alt="Mutual of Omaha">
+            <img src="logos/AIG.png" alt="AIG">
+            <img src="logos/Foresters-Financial.png" alt="Foresters Financial">
+            <img src="logos/Gerber-Life-Insurance.png" alt="Gerber Life Insurance">
+            <img src="logos/CICA-Life-of-America.png" alt="CICA Life of America">
+            <img src="logos/American-Amicable.png" alt="American-Amicable">
+            <img src="logos/American-Amicable-Group.png" alt="American Amicable Group">
+            <img src="logos/Transamerica.png" alt="Transamerica">
+            <img src="logos/GTL.png" alt="GTL">
+            <img src="logos/SBLI.png" alt="SBLI">
+            <img src="logos/Royal-Neighbors-of-America.png" alt="Royal Neighbors of America">
+            <img src="logos/Corebridge-Financial.png" alt="Corebridge Financial">
+            <img src="logos/Protective.png" alt="Protective">
+            <img src="logos/Sentinel-Security-Life.png" alt="Sentinel Security Life">
+            <img src="logos/Liberty-Bankers-Life-Insurance-Company.png" alt="Liberty Bankers Life Insurance Company">
+            <img src="logos/Aflac.png" alt="Aflac">
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer id="contact">
         <div class="container">
@@ -642,7 +623,6 @@
                     <ul>
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About John</a></li>
-                        <li><a href="#partners">Insurance Partners</a></li>
                         <li><a href="#quote">Get a Quote</a></li>
                         <li><a href="#">Claims Assistance</a></li>
                     </ul>
