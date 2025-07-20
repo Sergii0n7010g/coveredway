@@ -1,58 +1,508 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CoveredWay — Sergii Kultyshev</title>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Open Sans', sans-serif; line-height: 1.6; color: #333; background: #f9f9f9; }
-    header {
-      background: url('https://images.unsplash.com/photo-1601582581839-e3f8aa4f12f0?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
-      color: white;
-      text-align: center;
-      padding: 6rem 2rem;
-    }
-    header h1 { font-size: 2.8rem; margin-bottom: 1rem; }
-    header p { font-size: 1.2rem; }
-    section { padding: 4rem 2rem; max-width: 800px; margin: auto; }
-    .title { text-align: center; font-size: 2rem; color: #2c7a4b; margin-bottom: 2rem; }
-    .about p, .contact p { font-size: 1.1rem; margin-bottom: 1rem; text-align: justify; }
-    footer {
-      background: #2c7a4b;
-      color: white;
-      text-align: center;
-      padding: 1rem 0;
-      font-size: 0.9rem;
-    }
-    @media (max-width: 600px) {
-      header h1 { font-size: 2rem; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Insurance - Protect Your Future</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Main Content */
+        .main-content {
+            background: white;
+            padding: 80px 0;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .info-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #333;
+            font-weight: 700;
+        }
+
+        .info-section p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: #666;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .feature-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Quote Widget Section */
+        .quote-section {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 100px;
+        }
+
+        .quote-section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #333;
+            text-align: center;
+        }
+
+        .quote-section p {
+            text-align: center;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 80px 0;
+            color: white;
+        }
+
+        .benefits h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .benefit-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .benefit-item h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #34495e;
+            color: #bdc3c7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .quote-section {
+                position: static;
+                margin-top: 2rem;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Your Coverage, Our Mission</h1>
-    <p>Sergii Kultyshev — Licensed Life Insurance Agent</p>
-  </header>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">LifeGuard Insurance</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#quote">Get Quote</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <section class="about">
-    <div class="title">Meet Your Agent</div>
-    <p><strong>Sergii Kultyshev</strong> is a licensed life insurance agent in six states. He helps families across the U.S. secure vital protection through life insurance. He takes pride in prompt, personal service and guiding clients with compassion.</p>
-    <p>As an independent, carrier-agnostic agent, Sergii works only for <em>you</em>. He partners with over 15 top-rated life insurance companies to find the best coverage, price, and peace of mind — <strong>with no extra cost</strong> to you.</p>
-    <p>Sergii lives in New York, NY with his wife Nataliia. His mission: help American families protect what matters most.</p>
-  </section>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1 class="fade-in">Protect Your Family's Future</h1>
+            <p class="fade-in">Comprehensive life insurance coverage that gives you peace of mind and financial security for your loved ones.</p>
+            <a href="#quote" class="cta-button fade-in">Get Your Free Quote</a>
+        </div>
+    </section>
 
-  <section class="contact">
-    <div class="title">Contact</div>
-    <p>Email: <a href="mailto:sergii@coveredway.com">sergii@coveredway.com</a></p>
-    <p>Phone: (555) 123-4567</p>
-    <p>Location: Staten Island, NY</p>
-  </section>
+    <!-- Main Content -->
+    <section class="main-content" id="about">
+        <div class="container">
+            <div class="content-grid">
+                <div class="info-section">
+                    <h2>Why Choose Life Insurance?</h2>
+                    <p>Life insurance is one of the most important financial decisions you can make for your family. It provides financial protection and peace of mind, ensuring your loved ones are taken care of when you're no longer there to provide for them.</p>
+                    
+                    <p>Our comprehensive life insurance policies are designed to meet your unique needs and budget, offering flexible coverage options and competitive rates.</p>
 
-  <footer>
-    &copy; 2025 CoveredWay.com — All rights reserved
-  </footer>
+                    <div class="features">
+                        <div class="feature-card fade-in">
+                            <div class="feature-icon">🛡️</div>
+                            <h3>Financial Protection</h3>
+                            <p>Secure your family's financial future with comprehensive coverage options.</p>
+                        </div>
+                        <div class="feature-card fade-in">
+                            <div class="feature-icon">💰</div>
+                            <h3>Affordable Rates</h3>
+                            <p>Get competitive premiums that fit your budget without compromising coverage.</p>
+                        </div>
+                        <div class="feature-card fade-in">
+                            <div class="feature-icon">⚡</div>
+                            <h3>Quick Approval</h3>
+                            <p>Fast and easy application process with quick approval decisions.</p>
+                        </div>
+                        <div class="feature-card fade-in">
+                            <div class="feature-icon">🎯</div>
+                            <h3>Flexible Options</h3>
+                            <p>Choose from various policy types and coverage amounts to meet your needs.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quote-section" id="quote">
+                    <h3>Get Your Free Quote</h3>
+                    <p>Compare rates from top insurance providers in minutes</p>
+                    
+                    <!-- FEX Lite Start -->
+                    <iframe style="border: none; height: 800px; width: 100%; border-radius: 10px;"
+                      src="https://insurancetoolkits.com/fex/lite-form/?token=QV2Ql_QsHx2eMmmz4lBYPr7G2wyzSXF9XgNM2iRO">
+                    </iframe>
+                    <!-- FEX Lite End -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits" id="products">
+        <div class="container">
+            <h2>Our Life Insurance Benefits</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <h4>Term Life Insurance</h4>
+                    <p>Affordable coverage for a specific period, perfect for young families and those with temporary financial obligations.</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>Whole Life Insurance</h4>
+                    <p>Permanent coverage with cash value accumulation, providing lifelong protection and investment growth.</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>Universal Life Insurance</h4>
+                    <p>Flexible premiums and death benefits with investment options to help grow your policy's cash value.</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>No Medical Exam Options</h4>
+                    <p>Quick approval life insurance policies available without the need for medical examinations.</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>Living Benefits</h4>
+                    <p>Access to your death benefit while living in case of terminal, chronic, or critical illness.</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>24/7 Customer Support</h4>
+                    <p>Round-the-clock customer service to help you with claims, questions, and policy management.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li>📞 1-800-LIFE-INS</li>
+                        <li>✉️ info@lifeguardinsurance.com</li>
+                        <li>📍 123 Insurance Ave, Suite 100</li>
+                        <li>🏢 New York, NY 10001</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#products">Insurance Products</a></li>
+                        <li><a href="#quote">Get a Quote</a></li>
+                        <li><a href="#">Claims</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Life Insurance Guide</a></li>
+                        <li><a href="#">Coverage Calculator</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Customer Portal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Licensing</a></li>
+                        <li><a href="#">Compliance</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 LifeGuard Insurance. All rights reserved. | Licensed Insurance Agency</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all feature cards
+        document.querySelectorAll('.feature-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
 </body>
 </html>
