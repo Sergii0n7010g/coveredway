@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Life Insurance - Protect Your Future</title>
+    <title>John Johnson - Independent Life Insurance Agent</title>
     <style>
         * {
             margin: 0;
@@ -99,11 +99,16 @@
             font-size: 1.1rem;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            margin: 0 10px;
         }
 
         .cta-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-button.secondary {
+            background: linear-gradient(45deg, #28a745, #20c997);
         }
 
         /* Main Content */
@@ -178,6 +183,7 @@
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 100px;
+            margin-bottom: 2rem;
         }
 
         .quote-section h3 {
@@ -191,6 +197,103 @@
             text-align: center;
             color: #666;
             margin-bottom: 1.5rem;
+        }
+
+        /* Widget Tabs */
+        .widget-tabs {
+            display: flex;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #e9ecef;
+        }
+
+        .tab-button {
+            flex: 1;
+            padding: 12px 20px;
+            background: #e9ecef;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            color: #666;
+        }
+
+        .tab-button.active {
+            background: #667eea;
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* About Section */
+        .about-section {
+            background: white;
+            padding: 80px 0;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: #666;
+            text-align: left;
+        }
+
+        /* Partners Section */
+        .partners-section {
+            background: #f8f9fa;
+            padding: 80px 0;
+        }
+
+        .partners-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .partner-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .partner-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .partner-card h4 {
+            color: #333;
+            font-size: 1rem;
+            margin-top: 1rem;
         }
 
         /* Benefits Section */
@@ -296,6 +399,14 @@
             .features {
                 grid-template-columns: 1fr;
             }
+
+            .partners-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+
+            .widget-tabs {
+                flex-direction: column;
+            }
         }
 
         /* Animation */
@@ -319,11 +430,11 @@
     <!-- Header -->
     <header>
         <nav class="container">
-            <div class="logo">LifeGuard Insurance</div>
+            <div class="logo">John Johnson Insurance</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#partners">My Partners</a></li>
                 <li><a href="#quote">Get Quote</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -333,55 +444,148 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
-            <h1 class="fade-in">Protect Your Family's Future</h1>
-            <p class="fade-in">Comprehensive life insurance coverage that gives you peace of mind and financial security for your loved ones.</p>
+            <h1 class="fade-in">Independent Life Insurance Agent</h1>
+            <p class="fade-in">I work for YOU, not the insurance companies. Let me shop from coast to coast to find you the best coverage and pricing.</p>
             <a href="#quote" class="cta-button fade-in">Get Your Free Quote</a>
+            <a href="#quote" class="cta-button secondary fade-in">Term Life Quote</a>
         </div>
     </section>
 
     <!-- Main Content -->
-    <section class="main-content" id="about">
+    <section class="main-content" id="services">
         <div class="container">
             <div class="content-grid">
                 <div class="info-section">
-                    <h2>Why Choose Life Insurance?</h2>
-                    <p>Life insurance is one of the most important financial decisions you can make for your family. It provides financial protection and peace of mind, ensuring your loved ones are taken care of when you're no longer there to provide for them.</p>
+                    <h2>Your Personal Insurance Advisor</h2>
+                    <p>But I've come across all kinds of concerns over the years. This is an important decision, so take your time... We do both little and big things every day for our loved ones. But if you really compare that to what a life insurance policy means — it's not even close.</p>
                     
-                    <p>Our comprehensive life insurance policies are designed to meet your unique needs and budget, offering flexible coverage options and competitive rates.</p>
+                    <p>I understand your specific life insurance needs so I shop from coast to coast on your behalf with top-rated carriers to find the best coverage and pricing.</p>
+
+                    <p>As an independent, carrier-agnostic agent, I have no loyalty to any one company—only to you. I act as your personal insurance advisor. There's no charge for my services—they are completely free to you, paid for by the insurance company you choose.</p>
 
                     <div class="features">
                         <div class="feature-card fade-in">
                             <div class="feature-icon">🛡️</div>
-                            <h3>Financial Protection</h3>
-                            <p>Secure your family's financial future with comprehensive coverage options.</p>
+                            <h3>Independent Advice</h3>
+                            <p>I work for YOU, not tied to any single insurance company.</p>
                         </div>
                         <div class="feature-card fade-in">
                             <div class="feature-icon">💰</div>
-                            <h3>Affordable Rates</h3>
-                            <p>Get competitive premiums that fit your budget without compromising coverage.</p>
+                            <h3>Best Rates</h3>
+                            <p>I shop multiple carriers to find you the most competitive pricing.</p>
                         </div>
                         <div class="feature-card fade-in">
                             <div class="feature-icon">⚡</div>
-                            <h3>Quick Approval</h3>
-                            <p>Fast and easy application process with quick approval decisions.</p>
+                            <h3>Free Service</h3>
+                            <p>My services are completely free to you, paid by the insurance company.</p>
                         </div>
                         <div class="feature-card fade-in">
                             <div class="feature-icon">🎯</div>
-                            <h3>Flexible Options</h3>
-                            <p>Choose from various policy types and coverage amounts to meet your needs.</p>
+                            <h3>Personal Touch</h3>
+                            <p>Personalized service and guidance throughout the entire process.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="quote-section" id="quote">
-                    <h3>Get Your Free Quote</h3>
-                    <p>Compare rates from top insurance providers in minutes</p>
+                    <div class="widget-tabs">
+                        <button class="tab-button active" onclick="switchTab('general')">General Life Insurance</button>
+                        <button class="tab-button" onclick="switchTab('term')">Term Life Insurance</button>
+                    </div>
                     
-                    <!-- FEX Lite Start -->
-                    <iframe style="border: none; height: 800px; width: 100%; border-radius: 10px;"
-                      src="https://insurancetoolkits.com/fex/lite-form/?token=QV2Ql_QsHx2eMmmz4lBYPr7G2wyzSXF9XgNM2iRO">
-                    </iframe>
-                    <!-- FEX Lite End -->
+                    <div id="general-tab" class="tab-content active">
+                        <h3>Get Your Free Quote</h3>
+                        <p>Compare rates from top insurance providers</p>
+                        
+                        <!-- FEX Lite Start -->
+                        <iframe style="border: none; height: 800px; width: 100%; border-radius: 10px;"
+                          src="https://insurancetoolkits.com/fex/lite-form/?token=QV2Ql_QsHx2eMmmz4lBYPr7G2wyzSXF9XgNM2iRO">
+                        </iframe>
+                        <!-- FEX Lite End -->
+                    </div>
+
+                    <div id="term-tab" class="tab-content">
+                        <h3>Term Life Insurance Quote</h3>
+                        <p>Get affordable term life coverage quotes</p>
+                        
+                        <!-- Second Widget for Term Life -->
+                        <iframe style="border: none; height: 800px; width: 100%; border-radius: 10px;"
+                          src="https://insurancetoolkits.com/fex/lite-form/?token=QV2Ql_QsHx2eMmmz4lBYPr7G2wyzSXF9XgNM2iRO">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-content">
+                <h2>About John Johnson</h2>
+                <p>John Johnson is an independent life insurance agent licensed in 14 states and helps families across the United States to secure critical protection for their loved ones through life insurance. He takes pride in providing prompt service and wise guidance to effectively protect individuals and families.</p>
+                
+                <p>As an independent agent, John works for YOU, not tied to any single insurance company. He collaborates with over 15 top-rated insurance carriers to ensure you have the best possible life insurance coverage.</p>
+                
+                <p>John and his family reside in New York, NY with his wife Nataliia.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="partners-section" id="partners">
+        <div class="container">
+            <h2>My Insurance Partners</h2>
+            <p style="text-align: center; font-size: 1.2rem; color: #666; margin-bottom: 2rem;">I work with over 15 top-rated insurance carriers to find you the best coverage and rates</p>
+            
+            <div class="partners-grid">
+                <div class="partner-card">
+                    <h4>Mutual of Omaha</h4>
+                </div>
+                <div class="partner-card">
+                    <h4>AIG (American International Group)</h4>
+                </div>
+                <div class="partner-card">
+                    <h4>Foresters Financial</h4>
+                </div>
+                <div class="partner-card">
+                    <h4>Gerber Life Insurance</h4>
+                </div>
+                <div class="partner-card">
+                    <h4>CICA Life of America</h4>
+                </div>
+                <div class="partner-card">
+                    <h4>American-Amicable</h4>
+                </div>
+                <div class="partner-card">
+                    <h4>American Amicable Group</h4>
+                </div>
+                <div class="partner-card">
+                    <h4>Transamerica</h4>
+                </div>
+                <div class="partner-card">
+                    <h4>GTL (Guarantee Trust Life)</h4>
+                </div>
+                <div class="partner-card">
+                    <h4>SBLI (Savings Bank Life Insurance)</h4>
+                </div>
+                <div class="partner-card">
+                    <h4>Royal Neighbors of America</h4>
+                </div>
+                <div class="partner-card">
+                    <h4>Corebridge Financial</h4>
+                </div>
+                <div class="partner-card">
+                    <h4>Protective</h4>
+                </div>
+                <div class="partner-card">
+                    <h4>Sentinel Security Life</h4>
+                </div>
+                <div class="partner-card">
+                    <h4>Liberty Bankers Life Insurance</h4>
+                </div>
+                <div class="partner-card">
+                    <h4>Aflac</h4>
                 </div>
             </div>
         </div>
@@ -390,7 +594,7 @@
     <!-- Benefits Section -->
     <section class="benefits" id="products">
         <div class="container">
-            <h2>Our Life Insurance Benefits</h2>
+            <h2>Life Insurance Options I Offer</h2>
             <div class="benefits-grid">
                 <div class="benefit-item">
                     <h4>Term Life Insurance</h4>
@@ -409,12 +613,12 @@
                     <p>Quick approval life insurance policies available without the need for medical examinations.</p>
                 </div>
                 <div class="benefit-item">
-                    <h4>Living Benefits</h4>
-                    <p>Access to your death benefit while living in case of terminal, chronic, or critical illness.</p>
+                    <h4>Final Expense Insurance</h4>
+                    <p>Smaller policies designed to cover funeral costs and final expenses for seniors.</p>
                 </div>
                 <div class="benefit-item">
-                    <h4>24/7 Customer Support</h4>
-                    <p>Round-the-clock customer service to help you with claims, questions, and policy management.</p>
+                    <h4>Personal Service</h4>
+                    <p>One-on-one guidance throughout the entire process, from application to claims assistance.</p>
                 </div>
             </div>
         </div>
@@ -425,22 +629,32 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h4>Contact Us</h4>
+                    <h4>Contact John Johnson</h4>
                     <ul>
                         <li>📞 1-800-LIFE-INS</li>
-                        <li>✉️ info@lifeguardinsurance.com</li>
-                        <li>📍 123 Insurance Ave, Suite 100</li>
-                        <li>🏢 New York, NY 10001</li>
+                        <li>✉️ john@johnsoninsurance.com</li>
+                        <li>📍 New York, NY</li>
+                        <li>🏢 Licensed in 14 States</li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#products">Insurance Products</a></li>
+                        <li><a href="#about">About John</a></li>
+                        <li><a href="#partners">Insurance Partners</a></li>
                         <li><a href="#quote">Get a Quote</a></li>
-                        <li><a href="#">Claims</a></li>
+                        <li><a href="#">Claims Assistance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Term Life Insurance</a></li>
+                        <li><a href="#">Whole Life Insurance</a></li>
+                        <li><a href="#">Universal Life</a></li>
+                        <li><a href="#">Final Expense</a></li>
+                        <li><a href="#">No Exam Policies</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -449,28 +663,37 @@
                         <li><a href="#">Life Insurance Guide</a></li>
                         <li><a href="#">Coverage Calculator</a></li>
                         <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Customer Portal</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Licensing</a></li>
-                        <li><a href="#">Compliance</a></li>
-                        <li><a href="#">Accessibility</a></li>
+                        <li><a href="#">Client Testimonials</a></li>
+                        <li><a href="#">Insurance News</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2024 LifeGuard Insurance. All rights reserved. | Licensed Insurance Agency</p>
+                <p>© 2024 John Johnson Insurance Services. All rights reserved. | Independent Licensed Insurance Agent</p>
             </div>
         </div>
     </footer>
 
     <script>
+        // Tab switching functionality
+        function switchTab(tabName) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.tab-button').forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            // Show selected tab content
+            document.getElementById(tabName + '-tab').classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
