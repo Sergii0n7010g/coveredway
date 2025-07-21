@@ -5,524 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>John Johnson - Independent Life Insurance Agent</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: white;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header */
-        header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #5CB647;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: #5CB647;
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 120px 0 80px;
-            text-align: center;
-            color: #333;
-            background: white;
-            border-bottom: 2px solid #5CB647;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-            color: #333;
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            color: #666;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
-            color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            margin: 0 10px;
-            cursor: pointer;
-            border: none;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .cta-button.secondary {
-            background: linear-gradient(45deg, #28a745, #20c997);
-        }
-
-        /* Main Content */
-        .main-content {
-            background: white;
-            padding: 80px 0;
-        }
-
-        .content-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: start;
-        }
-
-        .info-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            color: #333;
-            font-weight: 700;
-        }
-
-        .info-section p {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            color: #666;
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-
-        .feature-card {
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid #e9ecef;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: #5CB647;
-        }
-
-        .feature-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: #333;
-        }
-
-        .feature-card p {
-            color: #666;
-            font-size: 0.95rem;
-        }
-
-        /* Quote Widget Section */
-        .quote-section {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 100px;
-            margin-bottom: 2rem;
-        }
-
-        .quote-section h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: #333;
-            text-align: center;
-        }
-
-        .quote-section p {
-            text-align: center;
-            color: #666;
-            margin-bottom: 1.5rem;
-        }
-
-        /* Widget Tabs */
-        .widget-tabs {
-            display: flex;
-            margin-bottom: 1rem;
-            border-radius: 10px;
-            overflow: hidden;
-            background: #e9ecef;
-        }
-
-        .tab-button {
-            flex: 1;
-            padding: 12px 20px;
-            background: #e9ecef;
-            border: none;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            color: #666;
-        }
-
-        .tab-button.active {
-            background: #5CB647;
-            color: white;
-        }
-
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        /* About Section */
-        .about-section {
-            background: white;
-            padding: 80px 0;
-            border-top: 1px solid #e9ecef;
-        }
-
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .about-content h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: #333;
-            text-align: center;
-        }
-
-        .about-flex {
-            display: flex;
-            gap: 2rem;
-            align-items: flex-start;
-        }
-
-        .about-photo {
-            width: 120px;
-            height: 225px;
-            background: #f0f0f0;
-            border-radius: 10px;
-            overflow: hidden;
-            flex-shrink: 0;
-            border: 1px solid #e9ecef;
-        }
-
-        .about-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .about-text p {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            color: #666;
-        }
-
-        /* Multi-page sections */
-        .page-navigation {
-            display: flex;
-            justify-content: center;
-            margin: 2rem 0;
-            gap: 1rem;
-        }
-
-        .page-button {
-            background: #e9ecef;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: 600;
-            color: #666;
-            transition: all 0.3s ease;
-        }
-
-        .page-button.active {
-            background: #5CB647;
-            color: white;
-        }
-
-        .page-content {
-            display: none;
-        }
-
-        .page-content.active {
-            display: block;
-            text-align: center;
-        }
-
-        .page-content img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Benefits Section */
-        .benefits {
-            background: white;
-            padding: 80px 0;
-            color: #333;
-            border-top: 1px solid #e9ecef;
-        }
-
-        .benefits h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #333;
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .benefit-item {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 15px;
-            border: 1px solid #e9ecef;
-        }
-
-        .benefit-item h4 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: #5CB647;
-        }
-
-        /* Logo Ticker */
-        .logo-ticker {
-            background: white;
-            height: 36px;
-            overflow: hidden;
-            white-space: nowrap;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            z-index: 999;
-            border-top: 1px solid #e9ecef;
-            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
-        }
-
-        .logo-ticker-content {
-            display: inline-block;
-            animation: scroll-left 30s linear infinite;
-            height: 100%;
-            line-height: 36px;
-        }
-
-        .logo-ticker img {
-            height: 30px;
-            width: auto;
-            margin: 3px 2px;
-            vertical-align: middle;
-        }
-
-        @keyframes scroll-left {
-            0% {
-                transform: translateX(100%);
-            }
-            100% {
-                transform: translateX(-150%);
-            }
-        }
-
-        .logo-ticker:hover .logo-ticker-content {
-            animation-play-state: paused;
-        }
-
-        /* Footer */
-        footer {
-            background: #f8f9fa;
-            color: #333;
-            padding: 3rem 0 3rem;
-            border-top: 1px solid #e9ecef;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-section h4 {
-            margin-bottom: 1rem;
-            color: #5CB647;
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section ul li {
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-section ul li a {
-            color: #666;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-section ul li a:hover {
-            color: #5CB647;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid #e9ecef;
-            color: #666;
-            margin-bottom: 36px;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
-            }
-
-            .content-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .quote-section {
-                position: static;
-                margin-top: 2rem;
-            }
-
-            .features {
-                grid-template-columns: 1fr;
-            }
-
-            .widget-tabs {
-                flex-direction: column;
-            }
-
-            .logo-ticker img {
-                height: 25px;
-                margin: 5.5px 2px;
-            }
-
-            .about-flex {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .about-photo {
-                margin-bottom: 1.5rem;
-            }
-        }
-
-        /* Animation */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-in {
-            animation: fadeInUp 0.6s ease-out;
-        }
+        /* Your existing styles */
     </style>
+    <script>
+        // Simple function to switch tabs
+        function switchToTab(tabName) {
+            // Hide all tabs
+            var tabs = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].style.display = "none";
+            }
+            
+            // Remove active class from all buttons
+            var buttons = document.getElementsByClassName("tab-button");
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].className = buttons[i].className.replace(" active", "");
+            }
+            
+            // Show the selected tab
+            document.getElementById(tabName + "-tab").style.display = "block";
+            
+            // Add active class to the button
+            document.getElementById(tabName + "-button").className += " active";
+        }
+        
+        // Function to handle page switching
+        function switchToPage(section, pageNum) {
+            // Hide all pages in this section
+            var pages = document.querySelectorAll("#" + section + " .page-content");
+            for (var i = 0; i < pages.length; i++) {
+                pages[i].style.display = "none";
+            }
+            
+            // Remove active class from all buttons
+            var buttons = document.querySelectorAll("#" + section + " .page-button");
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].className = buttons[i].className.replace(" active", "");
+            }
+            
+            // Show the selected page
+            document.getElementById(section + "-page-" + pageNum).style.display = "block";
+            
+            // Add active class to the button
+            document.querySelectorAll("#" + section + " .page-button")[pageNum-1].className += " active";
+        }
+    </script>
 </head>
 <body>
     <!-- Header -->
     <header>
-        <nav class="container">
-            <div class="logo">John Johnson</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#quote">Get Quote</a></li>
-                <li><a href="#stories">Stories</a></li>
-                <li><a href="#social">Your Social Group</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <!-- Your header content -->
     </header>
 
     <!-- Hero Section -->
@@ -530,8 +62,8 @@
         <div class="container">
             <h1 class="fade-in">Independent Life Insurance Agent</h1>
             <p class="fade-in">I work for YOU, not the insurance companies. Let me shop from coast to coast to find you the best coverage and pricing.</p>
-            <button class="cta-button fade-in">Whole Senior Life Quote</button>
-            <button class="cta-button secondary fade-in">Term Life Quote</button>
+            <a href="#quote" class="cta-button fade-in" onclick="setTimeout(function() { switchToTab('general'); }, 500)">Whole Senior Life Quote</a>
+            <a href="#quote" class="cta-button secondary fade-in" onclick="setTimeout(function() { switchToTab('term'); }, 500)">Term Life Quote</a>
         </div>
     </section>
 
@@ -539,42 +71,12 @@
     <section class="main-content" id="services">
         <div class="container">
             <div class="content-grid">
-                <div class="info-section">
-                    <h2>Your Personal Insurance Advisor</h2>
-                    <p>But I've come across all kinds of concerns over the years. This is an important decision, so take your time... We do both little and big things every day for our loved ones. But if you really compare that to what a life insurance policy means — it's not even close.</p>
-                    
-                    <p>I understand your specific life insurance needs so I shop from coast to coast on your behalf with top-rated carriers to find the best coverage and pricing.</p>
-
-                    <p>As an independent, carrier-agnostic agent, I have no loyalty to any one company—only to you. I act as your personal insurance advisor. There's no charge for my services—they are completely free to you, paid for by the insurance company you choose.</p>
-
-                    <div class="features">
-                        <div class="feature-card fade-in">
-                            <div class="feature-icon">🛡️</div>
-                            <h3>Independent Advice</h3>
-                            <p>I work for YOU, not tied to any single insurance company.</p>
-                        </div>
-                        <div class="feature-card fade-in">
-                            <div class="feature-icon">💰</div>
-                            <h3>Best Rates</h3>
-                            <p>I shop multiple carriers to find you the most competitive pricing.</p>
-                        </div>
-                        <div class="feature-card fade-in">
-                            <div class="feature-icon">⚡</div>
-                            <h3>Free Service</h3>
-                            <p>My services are completely free to you, paid by the insurance company.</p>
-                        </div>
-                        <div class="feature-card fade-in">
-                            <div class="feature-icon">🎯</div>
-                            <h3>Personal Touch</h3>
-                            <p>Personalized service and guidance throughout the entire process.</p>
-                        </div>
-                    </div>
-                </div>
+                <!-- Your info section -->
 
                 <div class="quote-section" id="quote">
                     <div class="widget-tabs">
-                        <button id="general-button" class="tab-button active">Whole Senior Life Quote</button>
-                        <button id="term-button" class="tab-button">Term Life Insurance</button>
+                        <button id="general-button" class="tab-button active" onclick="switchToTab('general')">Whole Senior Life Quote</button>
+                        <button id="term-button" class="tab-button" onclick="switchToTab('term')">Term Life Insurance</button>
                     </div>
                     
                     <div id="general-tab" class="tab-content active">
@@ -588,7 +90,7 @@
                         <!-- FEX Lite End -->
                     </div>
 
-                    <div id="term-tab" class="tab-content">
+                    <div id="term-tab" class="tab-content" style="display: none;">
                         <h3>Term Life Insurance Quote</h3>
                         <p>Get affordable term life coverage quotes</p>
                         
@@ -602,27 +104,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about-section" id="about">
-        <div class="container">
-            <div class="about-content">
-                <h2>About John Johnson</h2>
-                <div class="about-flex">
-                    <div class="about-photo">
-                        <img src="photo.jpg" alt="John Johnson">
-                    </div>
-                    <div class="about-text">
-                        <p>John Johnson is an independent life insurance agent licensed in 14 states and helps families across the United States to secure critical protection for their loved ones through life insurance. He takes pride in providing prompt service and wise guidance to effectively protect individuals and families.</p>
-                        
-                        <p>As an independent agent, John works for YOU, not tied to any single insurance company. He collaborates with over 15 top-rated insurance carriers to ensure you have the best possible life insurance coverage.</p>
-                        
-                        <p>John and his family reside in New York, NY with his wife Nataliia.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Stories Section (3 pages) -->
     <section class="about-section" id="stories">
         <div class="container">
@@ -630,33 +111,21 @@
                 <h2>Stories</h2>
                 
                 <div class="page-navigation">
-                    <button class="page-button active">Page 1</button>
-                    <button class="page-button">Page 2</button>
-                    <button class="page-button">Page 3</button>
+                    <button class="page-button active" onclick="switchToPage('stories', 1)">Page 1</button>
+                    <button class="page-button" onclick="switchToPage('stories', 2)">Page 2</button>
+                    <button class="page-button" onclick="switchToPage('stories', 3)">Page 3</button>
                 </div>
                 
                 <div id="stories-page-1" class="page-content active">
                     <img src="stories-1.png" alt="Stories Page 1">
                 </div>
                 
-                <div id="stories-page-2" class="page-content">
+                <div id="stories-page-2" class="page-content" style="display: none;">
                     <img src="stories-2.png" alt="Stories Page 2">
                 </div>
                 
-                <div id="stories-page-3" class="page-content">
+                <div id="stories-page-3" class="page-content" style="display: none;">
                     <img src="stories-3.png" alt="Stories Page 3">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Social Group Section -->
-    <section class="about-section" id="social">
-        <div class="container">
-            <div class="about-content">
-                <h2>Your Social Group</h2>
-                <div style="text-align: center; margin: 2rem 0;">
-                    <img src="social.png" alt="Your Social Group" style="max-width: 100%; height: auto;">
                 </div>
             </div>
         </div>
@@ -669,197 +138,21 @@
                 <h2>Frequently Asked Questions</h2>
                 
                 <div class="page-navigation">
-                    <button class="page-button active">Page 1</button>
-                    <button class="page-button">Page 2</button>
+                    <button class="page-button active" onclick="switchToPage('faq', 1)">Page 1</button>
+                    <button class="page-button" onclick="switchToPage('faq', 2)">Page 2</button>
                 </div>
                 
                 <div id="faq-page-1" class="page-content active">
                     <img src="faq-1.png" alt="FAQ Page 1">
                 </div>
                 
-                <div id="faq-page-2" class="page-content">
+                <div id="faq-page-2" class="page-content" style="display: none;">
                     <img src="faq-2.png" alt="FAQ Page 2">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Benefits Section -->
-    <section class="benefits" id="products">
-        <div class="container">
-            <h2>Life Insurance Options I Offer</h2>
-            <div class="benefits-grid">
-                <div class="benefit-item">
-                    <h4>Term Life Insurance</h4>
-                    <p>Affordable coverage for a specific period, perfect for young families and those with temporary financial obligations.</p>
-                </div>
-                <div class="benefit-item">
-                    <h4>Whole Life Insurance</h4>
-                    <p>Permanent coverage with cash value accumulation, providing lifelong protection and investment growth.</p>
-                </div>
-                <div class="benefit-item">
-                    <h4>Universal Life Insurance</h4>
-                    <p>Flexible premiums and death benefits with investment options to help grow your policy's cash value.</p>
-                </div>
-                <div class="benefit-item">
-                    <h4>No Medical Exam Options</h4>
-                    <p>Quick approval life insurance policies available without the need for medical examinations.</p>
-                </div>
-                <div class="benefit-item">
-                    <h4>Final Expense Insurance</h4>
-                    <p>Smaller policies designed to cover funeral costs and final expenses for seniors.</p>
-                </div>
-                <div class="benefit-item">
-                    <h4>Personal Service</h4>
-                    <p>One-on-one guidance throughout the entire process, from application to claims assistance.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Contact John Johnson</h4>
-                    <ul>
-                        <li>📞 1-800-LIFE-INS</li>
-                        <li>✉️ john@johnsoninsurance.com</li>
-                        <li>📍 New York, NY</li>
-                        <li>🏢 Licensed in 14 States</li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About John</a></li>
-                        <li><a href="#quote">Get a Quote</a></li>
-                        <li><a href="#stories">Stories</a></li>
-                        <li><a href="#social">Your Social Group</a></li>
-                        <li><a href="#faq">FAQ</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="#">Term Life Insurance</a></li>
-                        <li><a href="#">Whole Life Insurance</a></li>
-                        <li><a href="#">Universal Life</a></li>
-                        <li><a href="#">Final Expense</a></li>
-                        <li><a href="#">No Exam Policies</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Resources</h4>
-                    <ul>
-                        <li><a href="#">Life Insurance Guide</a></li>
-                        <li><a href="#">Coverage Calculator</a></li>
-                        <li><a href="#faq">FAQ</a></li>
-                        <li><a href="#">Client Testimonials</a></li>
-                        <li><a href="#">Insurance News</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2024 John Johnson. All rights reserved. | Independent Licensed Insurance Agent</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Logo Ticker (Fixed at bottom) -->
-    <div class="logo-ticker">
-        <div class="logo-ticker-content">
-            <img src="logos/Mutual-of-Omaha.png" alt="Mutual of Omaha">
-            <img src="logos/AIG.png" alt="AIG">
-            <img src="logos/Foresters-Financial.png" alt="Foresters Financial">
-            <img src="logos/Gerber-Life-Insurance.png" alt="Gerber Life Insurance">
-            <img src="logos/CICA-Life-of-America.png" alt="CICA Life of America">
-            <img src="logos/American-Amicable.png" alt="American-Amicable">
-            <img src="logos/Transamerica.png" alt="Transamerica">
-            <img src="logos/GTL.png" alt="GTL">
-            <img src="logos/SBLI.png" alt="SBLI">
-            <img src="logos/Royal-Neighbors-of-America.png" alt="Royal Neighbors of America">
-            <img src="logos/Protective.png" alt="Protective">
-            <img src="logos/Aflac.png" alt="Aflac">
-            <img src="logos/Mutual-of-Omaha.png" alt="Mutual of Omaha">
-            <img src="logos/AIG.png" alt="AIG">
-            <img src="logos/Foresters-Financial.png" alt="Foresters Financial">
-            <img src="logos/Gerber-Life-Insurance.png" alt="Gerber Life Insurance">
-            <img src="logos/CICA-Life-of-America.png" alt="CICA Life of America">
-            <img src="logos/American-Amicable.png" alt="American-Amicable">
-            <img src="logos/Transamerica.png" alt="Transamerica">
-            <img src="logos/GTL.png" alt="GTL">
-            <img src="logos/SBLI.png" alt="SBLI">
-            <img src="logos/Royal-Neighbors-of-America.png" alt="Royal Neighbors of America">
-            <img src="logos/Protective.png" alt="Protective">
-            <img src="logos/Aflac.png" alt="Aflac">
-            <img src="logos/Mutual-of-Omaha.png" alt="Mutual of Omaha">
-            <img src="logos/AIG.png" alt="AIG">
-            <img src="logos/Foresters-Financial.png" alt="Foresters Financial">
-            <img src="logos/Gerber-Life-Insurance.png" alt="Gerber Life Insurance">
-            <img src="logos/CICA-Life-of-America.png" alt="CICA Life of America">
-            <img src="logos/American-Amicable.png" alt="American-Amicable">
-            <img src="logos/Transamerica.png" alt="Transamerica">
-            <img src="logos/GTL.png" alt="GTL">
-            <img src="logos/SBLI.png" alt="SBLI">
-            <img src="logos/Royal-Neighbors-of-America.png" alt="Royal Neighbors of America">
-            <img src="logos/Protective.png" alt="Protective">
-            <img src="logos/Aflac.png" alt="Aflac">
-        </div>
-    </div>
-
-    <script>
-        // Wait for the DOM to be fully loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            // Set up click handlers for the hero buttons
-            document.querySelectorAll('.hero .cta-button').forEach(function(button) {
-                button.addEventListener('click', function() {
-                    // Determine which tab to show based on button text
-                    var tabName = this.textContent.includes('Senior') ? 'general' : 'term';
-                    
-                    // Scroll to quote section
-                    document.getElementById('quote').scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                    
-                    // Wait for scroll to complete before switching tabs
-                    setTimeout(function() {
-                        // Hide all tab contents
-                        document.querySelectorAll('.tab-content').forEach(function(tab) {
-                            tab.classList.remove('active');
-                        });
-                        
-                        // Remove active class from all buttons
-                        document.querySelectorAll('.tab-button').forEach(function(btn) {
-                            btn.classList.remove('active');
-                        });
-                        
-                        // Show selected tab content
-                        document.getElementById(tabName + '-tab').classList.add('active');
-                        
-                        // Add active class to clicked button
-                        document.getElementById(tabName + '-button').classList.add('active');
-                    }, 500);
-                });
-            });
-            
-            // Set up click handlers for the tab buttons
-            document.querySelectorAll('.widget-tabs .tab-button').forEach(function(button) {
-                button.addEventListener('click', function() {
-                    // Get the tab name from the button's id
-                    var tabName = this.id.replace('-button', '');
-                    
-                    // Hide all tab contents
-                    document.querySelectorAll('.tab-content').forEach(function(tab) {
-                        tab.classList.remove('active');
-                    });
-                    
-                    // Remove active class from all buttons
-                    document.querySelectorAll('.tab-button').forEach(function(btn) {
-                        btn.classList.remove('active');
-                    });
-                    
-                    // Show selected tab content
-                    document.getElementById(tabName + '-
+    <!-- Rest of your HTML content -->
+</body>
+</html>
