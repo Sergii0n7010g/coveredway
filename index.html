@@ -76,6 +76,13 @@
             margin: 5px 0;
         }
         
+        /* Home section with padding to prevent header overlap */
+        #home {
+            padding-top: 80px; /* Added padding to prevent header overlap */
+            margin-top: -80px; /* Offset the padding to maintain layout */
+            scroll-margin-top: 100px; /* This helps with smooth scrolling */
+        }
+        
         h1 {
             text-align: center;
             margin-bottom: 30px;
@@ -214,20 +221,15 @@
         
         .about-photo {
             width: 150px;
-            height: 225px;
-            border-radius: 10px;
-            overflow: hidden;
             flex-shrink: 0;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            display: flex; /* Added to center the image */
-            align-items: center; /* Added to center the image */
-            justify-content: center; /* Added to center the image */
+            border-radius: 10px;
+            overflow: hidden;
         }
         
         .about-photo img {
             width: 100%;
-            height: auto; /* Changed to auto to maintain aspect ratio */
-            object-fit: contain; /* Changed to contain to prevent cropping */
+            display: block;
         }
         
         /* Page navigation */
