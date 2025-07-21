@@ -15,7 +15,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: white;
         }
 
         .container {
@@ -45,7 +45,7 @@
         .logo {
             font-size: 1.8rem;
             font-weight: bold;
-            color: #667eea;
+            color: #5CB647;
         }
 
         .nav-links {
@@ -62,7 +62,7 @@
         }
 
         .nav-links a:hover {
-            color: #667eea;
+            color: #5CB647;
         }
 
         /* Hero Section */
@@ -70,6 +70,7 @@
             padding: 120px 0 80px;
             text-align: center;
             color: white;
+            background: linear-gradient(135deg, #5CB647 0%, #3d7a2f 100%);
         }
 
         .hero h1 {
@@ -161,7 +162,7 @@
         .feature-icon {
             font-size: 3rem;
             margin-bottom: 1rem;
-            color: #667eea;
+            color: #5CB647;
         }
 
         .feature-card h3 {
@@ -220,7 +221,7 @@
         }
 
         .tab-button.active {
-            background: #667eea;
+            background: #5CB647;
             color: white;
         }
 
@@ -241,25 +242,45 @@
         .about-content {
             max-width: 800px;
             margin: 0 auto;
-            text-align: center;
         }
 
         .about-content h2 {
             font-size: 2.5rem;
             margin-bottom: 2rem;
             color: #333;
+            text-align: center;
         }
 
-        .about-content p {
+        .about-flex {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+
+        .about-photo {
+            width: 120px;
+            height: 225px;
+            background: #f0f0f0;
+            border-radius: 10px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .about-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-text p {
             font-size: 1.1rem;
             margin-bottom: 1.5rem;
             color: #666;
-            text-align: left;
         }
 
         /* Benefits Section */
         .benefits {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #5CB647 0%, #3d7a2f 100%);
             padding: 80px 0;
             color: white;
         }
@@ -291,18 +312,18 @@
 
         /* Logo Ticker */
         .logo-ticker {
-            background: #87ceeb; /* Light blue background */
+            background: #5CB647; /* Changed to green */
             height: 36px; /* 1/2 inch = 36px */
             overflow: hidden;
             white-space: nowrap;
             position: relative;
-            border-top: 1px solid #5dade2;
-            border-bottom: 1px solid #5dade2;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .logo-ticker-content {
             display: inline-block;
-            animation: scroll-left 30s linear infinite;
+            animation: scroll-left 60s linear infinite;
             height: 100%;
             line-height: 36px;
         }
@@ -312,16 +333,7 @@
             width: auto;
             margin: 3px 20px; /* Vertical centering and horizontal spacing */
             vertical-align: middle;
-            filter: brightness(0.8); /* Slightly darken logos for better visibility */
-        }
-
-        .logo-ticker span {
-            display: inline-block;
-            color: #333;
-            font-weight: bold;
-            margin: 0 30px;
-            vertical-align: middle;
-            font-size: 14px;
+            filter: brightness(1.1); /* Slightly brighten logos for better visibility */
         }
 
         @keyframes scroll-left {
@@ -340,9 +352,10 @@
 
         /* Footer */
         footer {
-            background: #2c3e50;
-            color: white;
+            background: #f8f9fa;
+            color: #333;
             padding: 3rem 0 1rem;
+            border-top: 1px solid #e9ecef;
         }
 
         .footer-content {
@@ -354,7 +367,7 @@
 
         .footer-section h4 {
             margin-bottom: 1rem;
-            color: #667eea;
+            color: #5CB647;
         }
 
         .footer-section ul {
@@ -366,20 +379,20 @@
         }
 
         .footer-section ul li a {
-            color: #bdc3c7;
+            color: #666;
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         .footer-section ul li a:hover {
-            color: white;
+            color: #5CB647;
         }
 
         .footer-bottom {
             text-align: center;
             padding-top: 2rem;
-            border-top: 1px solid #34495e;
-            color: #bdc3c7;
+            border-top: 1px solid #e9ecef;
+            color: #666;
         }
 
         /* Responsive Design */
@@ -419,9 +432,13 @@
                 margin: 5.5px 15px;
             }
 
-            .logo-ticker span {
-                font-size: 12px;
-                margin: 0 20px;
+            .about-flex {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about-photo {
+                margin-bottom: 1.5rem;
             }
         }
 
@@ -446,11 +463,14 @@
     <!-- Header -->
     <header>
         <nav class="container">
-            <div class="logo">John Johnson Insurance</div>
+            <div class="logo">John Johnson</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About Me</a></li>
                 <li><a href="#quote">Get Quote</a></li>
+                <li><a href="#stories">Stories</a></li>
+                <li><a href="#social">Your Social Group</a></li>
+                <li><a href="#faq">FAQ</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -504,12 +524,12 @@
 
                 <div class="quote-section" id="quote">
                     <div class="widget-tabs">
-                        <button class="tab-button active" onclick="switchTab('general')">General Life Insurance</button>
+                        <button class="tab-button active" onclick="switchTab('general')">Whole Senior Life Quote</button>
                         <button class="tab-button" onclick="switchTab('term')">Term Life Insurance</button>
                     </div>
                     
                     <div id="general-tab" class="tab-content active">
-                        <h3>Get Your Free Quote</h3>
+                        <h3>Whole Senior Life Quote</h3>
                         <p>Compare rates from top insurance providers</p>
                         
                         <!-- FEX Lite Start -->
@@ -538,11 +558,58 @@
         <div class="container">
             <div class="about-content">
                 <h2>About John Johnson</h2>
-                <p>John Johnson is an independent life insurance agent licensed in 14 states and helps families across the United States to secure critical protection for their loved ones through life insurance. He takes pride in providing prompt service and wise guidance to effectively protect individuals and families.</p>
-                
-                <p>As an independent agent, John works for YOU, not tied to any single insurance company. He collaborates with over 15 top-rated insurance carriers to ensure you have the best possible life insurance coverage.</p>
-                
-                <p>John and his family reside in New York, NY with his wife Nataliia.</p>
+                <div class="about-flex">
+                    <div class="about-photo">
+                        <!-- Placeholder for photo - replace with actual image -->
+                        <img src="photo-placeholder.jpg" alt="John Johnson">
+                    </div>
+                    <div class="about-text">
+                        <p>John Johnson is an independent life insurance agent licensed in 14 states and helps families across the United States to secure critical protection for their loved ones through life insurance. He takes pride in providing prompt service and wise guidance to effectively protect individuals and families.</p>
+                        
+                        <p>As an independent agent, John works for YOU, not tied to any single insurance company. He collaborates with over 15 top-rated insurance carriers to ensure you have the best possible life insurance coverage.</p>
+                        
+                        <p>John and his family reside in New York, NY with his wife Nataliia.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stories Section -->
+    <section class="about-section" id="stories">
+        <div class="container">
+            <div class="about-content">
+                <h2>Stories</h2>
+                <div style="text-align: center; margin: 2rem 0;">
+                    <!-- Placeholder for 3-letter portrait sized PNG -->
+                    <img src="stories-placeholder.png" alt="Stories" style="max-width: 100%; height: auto;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Group Section -->
+    <section class="about-section" id="social">
+        <div class="container">
+            <div class="about-content">
+                <h2>Your Social Group</h2>
+                <div style="text-align: center; margin: 2rem 0;">
+                    <!-- Placeholder for 1-letter portrait sized PNG -->
+                    <img src="social-placeholder.png" alt="Your Social Group" style="max-width: 100%; height: auto;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="about-section" id="faq">
+        <div class="container">
+            <div class="about-content">
+                <h2>Frequently Asked Questions</h2>
+                <div style="text-align: center; margin: 2rem 0;">
+                    <!-- Placeholder for 2-letter portrait sized PNG -->
+                    <img src="faq-placeholder.png" alt="FAQ" style="max-width: 100%; height: auto;">
+                </div>
             </div>
         </div>
     </section>
@@ -583,17 +650,31 @@
     <!-- Logo Ticker -->
     <div class="logo-ticker">
         <div class="logo-ticker-content">
-          <!-- Only 2 logos, repeated multiple times for smooth scrolling -->
-        <img src="logos/CICA-Life-of-America.png" alt="CICA Life of America">
-        <img src="logos/Transamerica.png" alt="Transamerica">
-        <img src="logos/CICA-Life-of-America.png" alt="CICA Life of America">
-        <img src="logos/Transamerica.png" alt="Transamerica">
-        <img src="logos/CICA-Life-of-America.png" alt="CICA Life of America">
-        <img src="logos/Transamerica.png" alt="Transamerica">
-        <img src="logos/CICA-Life-of-America.png" alt="CICA Life of America">
-        <img src="logos/Transamerica.png" alt="Transamerica">
-        <img src="logos/CICA-Life-of-America.png" alt="CICA Life of America">
-        <img src="logos/Transamerica.png" alt="Transamerica">
+            <img src="logos/Mutual-of-Omaha.png" alt="Mutual of Omaha">
+            <img src="logos/AIG.png" alt="AIG">
+            <img src="logos/Foresters-Financial.png" alt="Foresters Financial">
+            <img src="logos/Gerber-Life-Insurance.png" alt="Gerber Life Insurance">
+            <img src="logos/CICA-Life-of-America.png" alt="CICA Life of America">
+            <img src="logos/American-Amicable.png" alt="American-Amicable">
+            <img src="logos/Transamerica.png" alt="Transamerica">
+            <img src="logos/GTL.png" alt="GTL">
+            <img src="logos/SBLI.png" alt="SBLI">
+            <img src="logos/Royal-Neighbors-of-America.png" alt="Royal Neighbors of America">
+            <img src="logos/Protective.png" alt="Protective">
+            <img src="logos/Aflac.png" alt="Aflac">
+            <!-- Duplicate the logos for seamless loop -->
+            <img src="logos/Mutual-of-Omaha.png" alt="Mutual of Omaha">
+            <img src="logos/AIG.png" alt="AIG">
+            <img src="logos/Foresters-Financial.png" alt="Foresters Financial">
+            <img src="logos/Gerber-Life-Insurance.png" alt="Gerber Life Insurance">
+            <img src="logos/CICA-Life-of-America.png" alt="CICA Life of America">
+            <img src="logos/American-Amicable.png" alt="American-Amicable">
+            <img src="logos/Transamerica.png" alt="Transamerica">
+            <img src="logos/GTL.png" alt="GTL">
+            <img src="logos/SBLI.png" alt="SBLI">
+            <img src="logos/Royal-Neighbors-of-America.png" alt="Royal Neighbors of America">
+            <img src="logos/Protective.png" alt="Protective">
+            <img src="logos/Aflac.png" alt="Aflac">
         </div>
     </div>
 
@@ -616,7 +697,9 @@
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About John</a></li>
                         <li><a href="#quote">Get a Quote</a></li>
-                        <li><a href="#">Claims Assistance</a></li>
+                        <li><a href="#stories">Stories</a></li>
+                        <li><a href="#social">Your Social Group</a></li>
+                        <li><a href="#faq">FAQ</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -634,14 +717,14 @@
                     <ul>
                         <li><a href="#">Life Insurance Guide</a></li>
                         <li><a href="#">Coverage Calculator</a></li>
-                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#faq">FAQ</a></li>
                         <li><a href="#">Client Testimonials</a></li>
                         <li><a href="#">Insurance News</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2024 John Johnson Insurance Services. All rights reserved. | Independent Licensed Insurance Agent</p>
+                <p>© 2024 John Johnson. All rights reserved. | Independent Licensed Insurance Agent</p>
             </div>
         </div>
     </footer>
