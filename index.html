@@ -4,42 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insurance Quotes | Sergii Kultyshev</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Modern, professional styling */
-        :root {
-            --primary: #5CB647;
-            --primary-light: #7ED957;
-            --primary-dark: #4A9939;
-            --secondary: #FF6B35;
-            --text-dark: #1a1a1a;
-            --text-medium: #4a4a4a;
-            --text-light: #6b7280;
-            --background: #f8fafc;
-            --white: #ffffff;
-            --border: #e5e7eb;
-            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
-            --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
-            --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
-            --border-radius: 12px;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
+        /* Simple, clean styling */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Arial', sans-serif;
         }
         
         body {
-            background-color: var(--background);
-            color: var(--text-dark);
+            background-color: #f8f9fa;
+            color: #333;
             line-height: 1.6;
-            padding-bottom: 50px;
-            font-size: 16px;
+            padding-bottom: 50px; /* Space for logo ticker */
         }
         
         .container {
@@ -48,17 +26,14 @@
             padding: 20px;
         }
         
-        /* Enhanced Header */
         header {
-            background-color: var(--white);
-            box-shadow: var(--shadow-sm);
-            padding: 16px 0;
-            margin-bottom: 0;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 20px 0;
+            margin-bottom: 40px;
             position: sticky;
             top: 0;
             z-index: 1000;
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border);
         }
         
         .header-content {
@@ -68,227 +43,116 @@
         }
         
         .logo {
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--primary);
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-size: 24px;
+            font-weight: bold;
+            color: #5CB647;
         }
         
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 8px;
         }
         
         .nav-links li {
-            margin: 0;
+            margin-left: 20px;
         }
         
         .nav-links a {
             text-decoration: none;
-            color: var(--text-medium);
+            color: #333;
             font-weight: 500;
-            font-size: 15px;
-            padding: 8px 16px;
-            border-radius: 8px;
-            transition: var(--transition);
-            position: relative;
+            transition: color 0.3s ease;
         }
         
         .nav-links a:hover {
-            color: var(--primary);
-            background-color: rgba(92, 182, 71, 0.1);
+            color: #5CB647;
         }
         
-        /* Hero Section */
-        .hero-section {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
-            color: var(--white);
-            padding: 80px 0 60px;
-            margin-bottom: 60px;
-            position: relative;
-            overflow: hidden;
+        .contact-info {
+            text-align: right;
         }
         
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-            opacity: 0.3;
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
+        .contact-info p {
+            margin: 5px 0;
         }
         
         /* Quote section with padding to prevent header overlap */
         #Quote {
-            padding-top: 40px;
-            scroll-margin-top: 100px;
+            padding-top: 80px; /* Added padding to prevent header overlap */
+            margin-top: -80px; /* Offset the padding to maintain layout */
+            scroll-margin-top: 100px; /* This helps with smooth scrolling */
         }
         
         h1 {
             text-align: center;
-            margin-bottom: 24px;
-            color: var(--text-dark);
-            font-size: 42px;
-            font-weight: 700;
-            line-height: 1.2;
+            margin-bottom: 30px;
+            color: #333;
+            font-size: 36px;
         }
         
         .intro {
             text-align: center;
-            max-width: 700px;
-            margin: 0 auto 48px;
-            font-size: 20px;
-            color: var(--text-medium);
-            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            font-size: 18px;
+            color: #555;
         }
         
-        /* Enhanced Tabs */
         .tabs {
             display: flex;
             justify-content: center;
-            margin-bottom: 32px;
-            background: var(--white);
-            padding: 6px;
-            border-radius: 16px;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--border);
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
+            margin-bottom: 20px;
         }
         
         .tab-button {
-            padding: 14px 28px;
-            font-size: 16px;
-            background: transparent;
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #e9ecef;
             border: none;
             cursor: pointer;
-            font-weight: 600;
-            transition: var(--transition);
-            border-radius: 12px;
-            color: var(--text-medium);
-            flex: 1;
-            position: relative;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border-radius: 5px;
+            margin: 0 10px;
         }
         
         .tab-button:hover {
-            color: var(--primary);
-            background-color: rgba(92, 182, 71, 0.05);
+            background-color: #dee2e6;
         }
         
         .tab-button.active {
-            background: var(--primary);
-            color: var(--white);
-            box-shadow: var(--shadow-md);
-            transform: translateY(-1px);
+            background-color: #5CB647;
+            color: white;
         }
         
-        /* Enhanced Tab Content */
         .tab-content {
             display: none;
-            background: var(--white);
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow-lg);
-            padding: 40px;
-            margin-bottom: 48px;
-            border: 1px solid var(--border);
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 40px;
         }
         
         .tab-content.active {
             display: block;
-            animation: fadeIn 0.3s ease-in-out;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
         }
         
         .tab-content h2 {
             text-align: center;
-            margin-bottom: 16px;
-            color: var(--text-dark);
-            font-size: 28px;
-            font-weight: 700;
+            margin-bottom: 20px;
+            color: #333;
         }
         
         .tab-content p {
             text-align: center;
-            margin-bottom: 32px;
-            color: var(--text-medium);
-            font-size: 18px;
-        }
-        
-        /* Trust Indicators */
-        .trust-section {
-            background: var(--white);
-            padding: 60px 0;
-            margin: 80px 0;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--border);
-        }
-        
-        .trust-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .trust-item {
-            text-align: center;
-            padding: 32px 24px;
-            border-radius: var(--border-radius);
-            transition: var(--transition);
-        }
-        
-        .trust-item:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-md);
-        }
-        
-        .trust-icon {
-            width: 64px;
-            height: 64px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 24px;
-        }
-        
-        .trust-item h3 {
-            font-size: 20px;
-            margin-bottom: 12px;
-            color: var(--text-dark);
-            font-weight: 600;
-        }
-        
-        .trust-item p {
-            font-size: 15px;
-            color: var(--text-medium);
-            line-height: 1.5;
+            margin-bottom: 20px;
+            color: #666;
         }
         
         /* Logo Ticker */
         .logo-ticker {
-            background: var(--white);
+            background: white;
             height: 36px;
             overflow: hidden;
             white-space: nowrap;
@@ -296,7 +160,7 @@
             bottom: 0;
             width: 100%;
             z-index: 999;
-            border-top: 1px solid var(--border);
+            border-top: 1px solid #e9ecef;
             box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
         }
 
@@ -312,37 +176,33 @@
             width: auto;
             margin: 3px 10px;
             vertical-align: middle;
-            filter: grayscale(100%) opacity(0.7);
-            transition: var(--transition);
-        }
-
-        .logo-ticker img:hover {
-            filter: grayscale(0%) opacity(1);
         }
 
         @keyframes scroll-left {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-150%); }
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-150%);
+            }
         }
 
         .logo-ticker:hover .logo-ticker-content {
             animation-play-state: paused;
         }
         
-        /* Enhanced Section styling */
+        /* Section styling */
         .section {
-            padding-top: 80px;
-            margin-top: 60px;
-            border-top: 1px solid var(--border);
-            scroll-margin-top: 100px;
+            padding-top: 80px; /* Increased padding to prevent header overlap */
+            margin-top: 40px;
+            border-top: 1px solid #e9ecef;
+            scroll-margin-top: 100px; /* This helps with smooth scrolling to prevent header overlap */
         }
         
         .section h2 {
             text-align: center;
-            margin-bottom: 48px;
-            color: var(--text-dark);
-            font-size: 36px;
-            font-weight: 700;
+            margin-bottom: 30px;
+            color: #333;
         }
         
         .section-content {
@@ -350,138 +210,87 @@
             margin: 0 auto;
         }
         
-        /* Enhanced About section */
+        /* About section with photo */
         .about-flex {
             display: flex;
-            gap: 48px;
-            align-items: center;
-            max-width: 900px;
+            gap: 30px;
+            align-items: center; /* Changed to center alignment */
+            max-width: 800px;
             margin: 0 auto;
-            background: var(--white);
-            padding: 48px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow-lg);
-            border: 1px solid var(--border);
         }
         
         .about-photo {
-            width: 200px;
+            width: 150px;
             flex-shrink: 0;
-            box-shadow: var(--shadow-lg);
-            border-radius: var(--border-radius);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 10px;
             overflow: hidden;
-            border: 4px solid var(--white);
         }
         
         .about-photo img {
             width: 100%;
             display: block;
-            transition: var(--transition);
         }
         
-        .about-photo:hover img {
-            transform: scale(1.05);
-        }
-        
-        .about-text p {
-            font-size: 16px;
-            line-height: 1.7;
-            color: var(--text-medium);
-        }
-        
-        /* Enhanced Page navigation */
+        /* Page navigation */
         .page-navigation {
             display: flex;
             justify-content: center;
-            margin: 32px 0;
-            gap: 12px;
+            margin: 20px 0;
+            gap: 10px;
         }
         
         .page-button {
-            background: var(--white);
-            border: 2px solid var(--border);
-            padding: 12px 24px;
-            border-radius: 25px;
+            background: #e9ecef;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
             cursor: pointer;
             font-weight: 600;
-            color: var(--text-medium);
-            transition: var(--transition);
-            font-size: 14px;
-        }
-        
-        .page-button:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
+            color: #666;
+            transition: all 0.3s ease;
         }
         
         .page-button.active {
-            background: var(--primary);
-            color: var(--white);
-            border-color: var(--primary);
-            box-shadow: var(--shadow-md);
+            background: #5CB647;
+            color: white;
         }
         
         .page-content {
             display: none;
             text-align: center;
-            background: var(--white);
-            padding: 40px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow-lg);
-            border: 1px solid var(--border);
         }
         
         .page-content.active {
             display: block;
-            animation: fadeIn 0.3s ease-in-out;
         }
         
         .page-content img {
             max-width: 100%;
             height: auto;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow-sm);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             margin: 0 auto;
         }
         
-        /* Enhanced Footer */
         footer {
-            background: var(--white);
-            padding: 60px 0 20px;
+            background-color: white;
+            padding: 20px 0;
             text-align: center;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
-            margin-top: 80px;
-            border-top: 1px solid var(--border);
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            margin-top: 40px;
         }
         
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 48px;
-            margin-bottom: 48px;
-            text-align: left;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
         }
         
         .footer-section h4 {
-            margin-bottom: 24px;
-            color: var(--primary);
-            font-size: 18px;
-            font-weight: 600;
-            position: relative;
-            padding-bottom: 12px;
-        }
-        
-        .footer-section h4::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 3px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
-            border-radius: 2px;
+            margin-bottom: 1rem;
+            color: #5CB647;
         }
         
         .footer-section ul {
@@ -489,115 +298,69 @@
         }
         
         .footer-section ul li {
-            margin-bottom: 12px;
+            margin-bottom: 0.5rem;
         }
         
         .footer-section ul li a {
-            color: var(--text-medium);
+            color: #666;
             text-decoration: none;
-            transition: var(--transition);
-            display: inline-block;
-            font-size: 15px;
+            transition: color 0.3s ease;
         }
         
         .footer-section ul li a:hover {
-            color: var(--primary);
-            transform: translateX(4px);
+            color: #5CB647;
         }
         
         .footer-bottom {
             text-align: center;
-            padding-top: 32px;
-            border-top: 1px solid var(--border);
-            color: var(--text-light);
+            padding-top: 2rem;
+            border-top: 1px solid #e9ecef;
+            color: #666;
             margin-bottom: 36px;
-            font-size: 14px;
         }
         
-        /* Responsive Design */
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
                 text-align: center;
-                gap: 16px;
             }
             
             .nav-links {
+                margin-top: 15px;
                 justify-content: center;
                 flex-wrap: wrap;
-                gap: 4px;
             }
             
             .nav-links li {
-                margin: 0;
+                margin: 5px 10px;
             }
             
-            h1 {
-                font-size: 32px;
-            }
-            
-            .intro {
-                font-size: 18px;
+            .contact-info {
+                text-align: center;
+                margin-top: 15px;
             }
             
             .tabs {
                 flex-direction: column;
-                max-width: none;
-                margin: 0 20px 32px;
             }
             
             .tab-button {
-                border-radius: 0;
-                margin: 0;
-            }
-            
-            .tab-button:first-child {
-                border-radius: 10px 10px 0 0;
-            }
-            
-            .tab-button:last-child {
-                border-radius: 0 0 10px 10px;
-            }
-            
-            .tab-content {
-                padding: 24px;
-                margin: 0 20px 32px;
+                margin: 5px 0;
             }
             
             .about-flex {
                 flex-direction: column;
+                align-items: center;
                 text-align: center;
-                padding: 32px 24px;
-                gap: 32px;
             }
             
             .about-photo {
-                width: 160px;
-                margin: 0 auto;
-            }
-            
-            .trust-grid {
-                grid-template-columns: 1fr;
-                gap: 32px;
+                margin-bottom: 20px;
             }
             
             .footer-content {
                 grid-template-columns: 1fr;
                 text-align: center;
-                gap: 32px;
-            }
-            
-            .footer-section h4::after {
-                left: 50%;
-                transform: translateX(-50%);
-            }
-            
-            .section {
-                margin-top: 40px;
-            }
-            
-            .section h2 {
-                font-size: 28px;
             }
         }
     </style>
@@ -620,22 +383,12 @@
         </div>
     </header>
     
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container">
-            <div class="hero-content">
-                <h1 style="color: white; font-size: 48px; margin-bottom: 20px;">Life Insurance Made Simple</h1>
-                <p style="font-size: 20px; opacity: 0.9; max-width: 600px; margin: 0 auto;">As an independent agent, I work for YOU, not the insurance companies. Get personalized quotes from top providers in minutes.</p>
-            </div>
-        </div>
-    </section>
-    
     <div class="container" id="Quote">
         <h1>Get Your Insurance Quote</h1>
         
         <p class="intro">
-            Compare rates from 15+ top-rated insurance companies. 
-            Find the best coverage at the best price with personalized guidance.
+            As an independent insurance agent, I work for YOU, not the insurance companies. 
+            Let me help you find the best coverage at the best price.
         </p>
         
         <div class="tabs">
@@ -664,35 +417,6 @@
         </div>
     </div>
     
-    <!-- Trust Section -->
-    <section class="trust-section">
-        <div class="container">
-            <h2 style="text-align: center; margin-bottom: 48px; font-size: 32px;">Why Choose an Independent Agent?</h2>
-            <div class="trust-grid">
-                <div class="trust-item">
-                    <div class="trust-icon">🏆</div>
-                    <h3>15+ Top Carriers</h3>
-                    <p>Compare rates from multiple A-rated insurance companies to find your best option.</p>
-                </div>
-                <div class="trust-item">
-                    <div class="trust-icon">💰</div>
-                    <h3>No Extra Cost</h3>
-                    <p>My services are completely free - I'm compensated by the insurance company you choose.</p>
-                </div>
-                <div class="trust-item">
-                    <div class="trust-icon">🛡️</div>
-                    <h3>Licensed Professional</h3>
-                    <p>Fully licensed in 14 states with years of experience helping families secure protection.</p>
-                </div>
-                <div class="trust-item">
-                    <div class="trust-icon">🤝</div>
-                    <h3>Personal Service</h3>
-                    <p>One-on-one guidance throughout the entire process, from quote to policy delivery.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
     <!-- About Section -->
     <section id="about" class="container section">
         <h2>About Sergii Kultyshev</h2>
@@ -700,8 +424,8 @@
             <div class="about-photo">
                 <img src="photo.jpg" alt="Sergii Kultyshev">
             </div>
-            <div class="about-text">
-                <p style="margin-bottom: 24px;">
+            <div>
+                <p style="margin-bottom: 20px;">
                     Sergii Kultyshev is an independent life insurance agent licensed in 14 states and helps families across the United States 
                     to secure critical protection for their loved ones through life insurance. He takes pride in providing prompt service 
                     and wise guidance to effectively protect individuals and families.
@@ -716,7 +440,7 @@
     
     <!-- Stories Section -->
     <section id="stories" class="container section">
-        <h2>Success Stories</h2>
+        <h2>Stories</h2>
         <div class="section-content">
             <div class="page-navigation">
                 <button class="page-button active" onclick="switchPage('stories', 1)">Page 1</button>
@@ -769,7 +493,7 @@
     
     <!-- Partners Section -->
     <section id="partners" class="container section">
-        <h2>Our Insurance Partners</h2>
+        <h2>Partners</h2>
         <div class="section-content">
             <div id="partners-page-1" class="page-content active">
                 <img src="partners.jpg" alt="Our Partners">
@@ -794,9 +518,9 @@
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="#Quote">Get Quote</a></li>
+                        <li><a href="#Quote">Quote</a></li>
                         <li><a href="#about">About</a></li>
-                        <li><a href="#stories">Success Stories</a></li>
+                        <li><a href="#stories">Stories</a></li>
                         <li><a href="#faq">FAQ</a></li>
                         <li><a href="#yourself">Recognize Yourself</a></li>
                         <li><a href="#partners">Partners</a></li>
@@ -851,4 +575,56 @@
     <script>
         // Tab switching function
         function switchTab(tabName) {
-            // Hide all
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(function(tab) {
+                tab.style.display = 'none';
+                tab.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.tab-button').forEach(function(button) {
+                button.classList.remove('active');
+            });
+            
+            // Show the selected tab
+            document.getElementById(tabName + '-tab').style.display = 'block';
+            document.getElementById(tabName + '-tab').classList.add('active');
+            
+            // Add active class to the clicked button
+            document.getElementById(tabName + '-button').classList.add('active');
+        }
+        
+        // Page switching function
+        function switchPage(section, pageNum) {
+            // Hide all pages in this section
+            document.querySelectorAll('#' + section + ' .page-content').forEach(function(page) {
+                page.style.display = 'none';
+                page.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons in this section
+            document.querySelectorAll('#' + section + ' .page-button').forEach(function(button) {
+                button.classList.remove('active');
+            });
+            
+            // Show the selected page
+            document.getElementById(section + '-page-' + pageNum).style.display = 'block';
+            document.getElementById(section + '-page-' + pageNum).classList.add('active');
+            
+            // Add active class to the clicked button
+            document.querySelectorAll('#' + section + ' .page-button')[pageNum - 1].classList.add('active');
+        }
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
