@@ -371,7 +371,7 @@
 
         .logo-ticker-content {
             display: inline-block;
-            animation: scroll-left 60s linear infinite;
+            animation: scroll-left 30s linear infinite; /* Reduced to 30s */
             height: 100%;
             line-height: 36px;
         }
@@ -379,7 +379,7 @@
         .logo-ticker img {
             height: 30px; /* Slightly smaller than container for padding */
             width: auto;
-            margin: 3px 5px; /* Reduced horizontal spacing */
+            margin: 3px 2px; /* Reduced horizontal spacing further */
             vertical-align: middle;
         }
 
@@ -388,7 +388,7 @@
                 transform: translateX(100%);
             }
             100% {
-                transform: translateX(-200%); /* Extended to ensure no gaps */
+                transform: translateX(-150%); /* Adjusted for better flow */
             }
         }
 
@@ -477,7 +477,7 @@
 
             .logo-ticker img {
                 height: 25px;
-                margin: 5.5px 3px;
+                margin: 5.5px 2px;
             }
 
             .about-flex {
@@ -529,8 +529,8 @@
         <div class="container">
             <h1 class="fade-in">Independent Life Insurance Agent</h1>
             <p class="fade-in">I work for YOU, not the insurance companies. Let me shop from coast to coast to find you the best coverage and pricing.</p>
-            <a href="#quote" class="cta-button fade-in">Whole Senior Life Quote</a>
-            <a href="#quote" class="cta-button secondary fade-in">Term Life Quote</a>
+            <a href="#quote" class="cta-button fade-in" onclick="activateTab('general')">Whole Senior Life Quote</a>
+            <a href="#quote" class="cta-button secondary fade-in" onclick="activateTab('term')">Term Life Quote</a>
         </div>
     </section>
 
@@ -572,8 +572,8 @@
 
                 <div class="quote-section" id="quote">
                     <div class="widget-tabs">
-                        <button class="tab-button active" onclick="switchTab('general')">Whole Senior Life Quote</button>
-                        <button class="tab-button" onclick="switchTab('term')">Term Life Insurance</button>
+                        <button id="general-button" class="tab-button active" onclick="switchTab('general')">Whole Senior Life Quote</button>
+                        <button id="term-button" class="tab-button" onclick="switchTab('term')">Term Life Insurance</button>
                     </div>
                     
                     <div id="general-tab" class="tab-content active">
@@ -608,7 +608,9 @@
                 <h2>About John Johnson</h2>
                 <div class="about-flex">
                     <div class="about-photo">
-                        <!-- Placeholder for photo - replace with actual image -->
+                        <!-- IMAGE INSTRUCTION: Upload a professional headshot photo of John Johnson sized 120px width by 225px height -->
+                        <!-- The photo should be a professional portrait with good lighting against a neutral background -->
+                        <!-- Save the file as "photo.jpg" in the root directory of your website -->
                         <img src="photo.jpg" alt="John Johnson">
                     </div>
                     <div class="about-text">
@@ -636,14 +638,20 @@
                 </div>
                 
                 <div id="stories-page-1" class="page-content active">
+                    <!-- IMAGE INSTRUCTION: Create a portrait-oriented PNG image with client testimonials or success stories -->
+                    <!-- Save as "stories-1.png" in the root directory of your website -->
                     <img src="stories-1.png" alt="Stories Page 1">
                 </div>
                 
                 <div id="stories-page-2" class="page-content">
+                    <!-- IMAGE INSTRUCTION: Create a second portrait-oriented PNG image with additional client stories -->
+                    <!-- Save as "stories-2.png" in the root directory of your website -->
                     <img src="stories-2.png" alt="Stories Page 2">
                 </div>
                 
                 <div id="stories-page-3" class="page-content">
+                    <!-- IMAGE INSTRUCTION: Create a third portrait-oriented PNG image with more client stories -->
+                    <!-- Save as "stories-3.png" in the root directory of your website -->
                     <img src="stories-3.png" alt="Stories Page 3">
                 </div>
             </div>
@@ -656,7 +664,8 @@
             <div class="about-content">
                 <h2>Your Social Group</h2>
                 <div style="text-align: center; margin: 2rem 0;">
-                    <!-- Placeholder for 1-letter portrait sized PNG -->
+                    <!-- IMAGE INSTRUCTION: Create a portrait-oriented PNG image showing social connections or community -->
+                    <!-- Save as "social.png" in the root directory of your website -->
                     <img src="social.png" alt="Your Social Group" style="max-width: 100%; height: auto;">
                 </div>
             </div>
@@ -675,10 +684,14 @@
                 </div>
                 
                 <div id="faq-page-1" class="page-content active">
+                    <!-- IMAGE INSTRUCTION: Create a portrait-oriented PNG image with common insurance questions and answers -->
+                    <!-- Save as "faq-1.png" in the root directory of your website -->
                     <img src="faq-1.png" alt="FAQ Page 1">
                 </div>
                 
                 <div id="faq-page-2" class="page-content">
+                    <!-- IMAGE INSTRUCTION: Create a second portrait-oriented PNG image with additional FAQs -->
+                    <!-- Save as "faq-2.png" in the root directory of your website -->
                     <img src="faq-2.png" alt="FAQ Page 2">
                 </div>
             </div>
@@ -772,6 +785,8 @@
     <!-- Logo Ticker (Fixed at bottom) -->
     <div class="logo-ticker">
         <div class="logo-ticker-content">
+            <!-- IMAGE INSTRUCTION: Place all carrier logo PNG files in a folder named "logos" -->
+            <!-- Each logo should be approximately 30px in height with transparent background -->
             <img src="logos/Mutual-of-Omaha.png" alt="Mutual of Omaha">
             <img src="logos/AIG.png" alt="AIG">
             <img src="logos/Foresters-Financial.png" alt="Foresters Financial">
@@ -784,7 +799,7 @@
             <img src="logos/Royal-Neighbors-of-America.png" alt="Royal Neighbors of America">
             <img src="logos/Protective.png" alt="Protective">
             <img src="logos/Aflac.png" alt="Aflac">
-            <!-- Triple the logos for seamless loop -->
+            <!-- Quadruple the logos for seamless loop with no gaps -->
             <img src="logos/Mutual-of-Omaha.png" alt="Mutual of Omaha">
             <img src="logos/AIG.png" alt="AIG">
             <img src="logos/Foresters-Financial.png" alt="Foresters Financial">
@@ -808,51 +823,4 @@
             <img src="logos/SBLI.png" alt="SBLI">
             <img src="logos/Royal-Neighbors-of-America.png" alt="Royal Neighbors of America">
             <img src="logos/Protective.png" alt="Protective">
-            <img src="logos/Aflac.png" alt="Aflac">
-        </div>
-    </div>
-
-    <script>
-        // Tab switching functionality for quote widget
-        function switchTab(tabName) {
-            // Hide all tab contents
-            document.querySelectorAll('.tab-content').forEach(tab => {
-                tab.classList.remove('active');
-            });
-            
-            // Remove active class from all buttons
-            document.querySelectorAll('.tab-button').forEach(button => {
-                button.classList.remove('active');
-            });
-            
-            // Show selected tab content
-            document.getElementById(tabName + '-tab').classList.add('active');
-            
-            // Add active class to clicked button
-            event.target.classList.add('active');
-        }
-
-        // Page switching functionality for multi-page sections
-        function switchPage(section, pageNum) {
-            // Hide all page contents for this section
-            document.querySelectorAll(`#${section} .page-content`).forEach(page => {
-                page.classList.remove('active');
-            });
-            
-            // Remove active class from all page buttons for this section
-            document.querySelectorAll(`#${section} .page-button`).forEach(button => {
-                button.classList.remove('active');
-            });
-            
-            // Show selected page content
-            document.getElementById(`${section}-page-${pageNum}`).classList.add('active');
-            
-            // Add active class to clicked button
-            event.target.classList.add('active');
-        }
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
+            <img src="logos/Aflac.png" alt="Afl
