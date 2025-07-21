@@ -357,8 +357,8 @@
 
         /* Logo Ticker */
         .logo-ticker {
-            background: white; /* Changed to white */
-            height: 36px; /* 1/2 inch = 36px */
+            background: white;
+            height: 36px;
             overflow: hidden;
             white-space: nowrap;
             position: fixed;
@@ -371,15 +371,15 @@
 
         .logo-ticker-content {
             display: inline-block;
-            animation: scroll-left 30s linear infinite; /* Reduced to 30s */
+            animation: scroll-left 30s linear infinite;
             height: 100%;
             line-height: 36px;
         }
 
         .logo-ticker img {
-            height: 30px; /* Slightly smaller than container for padding */
+            height: 30px;
             width: auto;
-            margin: 3px 2px; /* Reduced horizontal spacing further */
+            margin: 3px 2px;
             vertical-align: middle;
         }
 
@@ -388,11 +388,10 @@
                 transform: translateX(100%);
             }
             100% {
-                transform: translateX(-150%); /* Adjusted for better flow */
+                transform: translateX(-150%);
             }
         }
 
-        /* Pause animation on hover */
         .logo-ticker:hover .logo-ticker-content {
             animation-play-state: paused;
         }
@@ -401,7 +400,7 @@
         footer {
             background: #f8f9fa;
             color: #333;
-            padding: 3rem 0 3rem; /* Added padding at bottom for logo ticker */
+            padding: 3rem 0 3rem;
             border-top: 1px solid #e9ecef;
         }
 
@@ -440,7 +439,7 @@
             padding-top: 2rem;
             border-top: 1px solid #e9ecef;
             color: #666;
-            margin-bottom: 36px; /* Space for the logo ticker */
+            margin-bottom: 36px;
         }
 
         /* Responsive Design */
@@ -608,9 +607,6 @@
                 <h2>About John Johnson</h2>
                 <div class="about-flex">
                     <div class="about-photo">
-                        <!-- IMAGE INSTRUCTION: Upload a professional headshot photo of John Johnson sized 120px width by 225px height -->
-                        <!-- The photo should be a professional portrait with good lighting against a neutral background -->
-                        <!-- Save the file as "photo.jpg" in the root directory of your website -->
                         <img src="photo.jpg" alt="John Johnson">
                     </div>
                     <div class="about-text">
@@ -638,20 +634,14 @@
                 </div>
                 
                 <div id="stories-page-1" class="page-content active">
-                    <!-- IMAGE INSTRUCTION: Create a portrait-oriented PNG image with client testimonials or success stories -->
-                    <!-- Save as "stories-1.png" in the root directory of your website -->
                     <img src="stories-1.png" alt="Stories Page 1">
                 </div>
                 
                 <div id="stories-page-2" class="page-content">
-                    <!-- IMAGE INSTRUCTION: Create a second portrait-oriented PNG image with additional client stories -->
-                    <!-- Save as "stories-2.png" in the root directory of your website -->
                     <img src="stories-2.png" alt="Stories Page 2">
                 </div>
                 
                 <div id="stories-page-3" class="page-content">
-                    <!-- IMAGE INSTRUCTION: Create a third portrait-oriented PNG image with more client stories -->
-                    <!-- Save as "stories-3.png" in the root directory of your website -->
                     <img src="stories-3.png" alt="Stories Page 3">
                 </div>
             </div>
@@ -664,8 +654,6 @@
             <div class="about-content">
                 <h2>Your Social Group</h2>
                 <div style="text-align: center; margin: 2rem 0;">
-                    <!-- IMAGE INSTRUCTION: Create a portrait-oriented PNG image showing social connections or community -->
-                    <!-- Save as "social.png" in the root directory of your website -->
                     <img src="social.png" alt="Your Social Group" style="max-width: 100%; height: auto;">
                 </div>
             </div>
@@ -684,14 +672,10 @@
                 </div>
                 
                 <div id="faq-page-1" class="page-content active">
-                    <!-- IMAGE INSTRUCTION: Create a portrait-oriented PNG image with common insurance questions and answers -->
-                    <!-- Save as "faq-1.png" in the root directory of your website -->
                     <img src="faq-1.png" alt="FAQ Page 1">
                 </div>
                 
                 <div id="faq-page-2" class="page-content">
-                    <!-- IMAGE INSTRUCTION: Create a second portrait-oriented PNG image with additional FAQs -->
-                    <!-- Save as "faq-2.png" in the root directory of your website -->
                     <img src="faq-2.png" alt="FAQ Page 2">
                 </div>
             </div>
@@ -785,8 +769,6 @@
     <!-- Logo Ticker (Fixed at bottom) -->
     <div class="logo-ticker">
         <div class="logo-ticker-content">
-            <!-- IMAGE INSTRUCTION: Place all carrier logo PNG files in a folder named "logos" -->
-            <!-- Each logo should be approximately 30px in height with transparent background -->
             <img src="logos/Mutual-of-Omaha.png" alt="Mutual of Omaha">
             <img src="logos/AIG.png" alt="AIG">
             <img src="logos/Foresters-Financial.png" alt="Foresters Financial">
@@ -799,7 +781,6 @@
             <img src="logos/Royal-Neighbors-of-America.png" alt="Royal Neighbors of America">
             <img src="logos/Protective.png" alt="Protective">
             <img src="logos/Aflac.png" alt="Aflac">
-            <!-- Quadruple the logos for seamless loop with no gaps -->
             <img src="logos/Mutual-of-Omaha.png" alt="Mutual of Omaha">
             <img src="logos/AIG.png" alt="AIG">
             <img src="logos/Foresters-Financial.png" alt="Foresters Financial">
@@ -827,4 +808,58 @@
         </div>
     </div>
 
-    
+    <script>
+        // Tab switching functionality for quote widget
+        function switchTab(tabName) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.tab-button').forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            // Show selected tab content
+            document.getElementById(tabName + '-tab').classList.add('active');
+            
+            // Add active class to clicked button
+            document.getElementById(tabName + '-button').classList.add('active');
+        }
+
+        // Function to activate tab from hero buttons
+        function activateTab(tabName) {
+            // Scroll to quote section
+            document.getElementById('quote').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+            
+            // Short delay to ensure scroll completes before switching tab
+            setTimeout(function() {
+                switchTab(tabName);
+            }, 500);
+        }
+
+        // Page switching functionality for multi-page sections
+        function switchPage(section, pageNum) {
+            // Hide all page contents for this section
+            document.querySelectorAll(`#${section} .page-content`).forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Remove active class from all page buttons for this section
+            document.querySelectorAll(`#${section} .page-button`).forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            // Show selected page content
+            document.getElementById(`${section}-page-${pageNum}`).classList.add('active');
+            
+            // Add active class to clicked button
+            event.currentTarget.classList.add('active');
+        }
+
+        // Smooth scrolling for navigation links
+        document.queryS
