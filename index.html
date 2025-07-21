@@ -530,8 +530,8 @@
         <div class="container">
             <h1 class="fade-in">Independent Life Insurance Agent</h1>
             <p class="fade-in">I work for YOU, not the insurance companies. Let me shop from coast to coast to find you the best coverage and pricing.</p>
-            <button class="cta-button fade-in" onclick="scrollToQuote('general')">Whole Senior Life Quote</button>
-            <button class="cta-button secondary fade-in" onclick="scrollToQuote('term')">Term Life Quote</button>
+            <button class="cta-button fade-in">Whole Senior Life Quote</button>
+            <button class="cta-button secondary fade-in">Term Life Quote</button>
         </div>
     </section>
 
@@ -573,8 +573,8 @@
 
                 <div class="quote-section" id="quote">
                     <div class="widget-tabs">
-                        <button id="general-button" class="tab-button active" onclick="switchTab('general')">Whole Senior Life Quote</button>
-                        <button id="term-button" class="tab-button" onclick="switchTab('term')">Term Life Insurance</button>
+                        <button id="general-button" class="tab-button active">Whole Senior Life Quote</button>
+                        <button id="term-button" class="tab-button">Term Life Insurance</button>
                     </div>
                     
                     <div id="general-tab" class="tab-content active">
@@ -630,9 +630,9 @@
                 <h2>Stories</h2>
                 
                 <div class="page-navigation">
-                    <button class="page-button active" onclick="switchPage('stories', 1)">Page 1</button>
-                    <button class="page-button" onclick="switchPage('stories', 2)">Page 2</button>
-                    <button class="page-button" onclick="switchPage('stories', 3)">Page 3</button>
+                    <button class="page-button active">Page 1</button>
+                    <button class="page-button">Page 2</button>
+                    <button class="page-button">Page 3</button>
                 </div>
                 
                 <div id="stories-page-1" class="page-content active">
@@ -669,8 +669,8 @@
                 <h2>Frequently Asked Questions</h2>
                 
                 <div class="page-navigation">
-                    <button class="page-button active" onclick="switchPage('faq', 1)">Page 1</button>
-                    <button class="page-button" onclick="switchPage('faq', 2)">Page 2</button>
+                    <button class="page-button active">Page 1</button>
+                    <button class="page-button">Page 2</button>
                 </div>
                 
                 <div id="faq-page-1" class="page-content active">
@@ -811,49 +811,55 @@
     </div>
 
     <script>
-        // Function to scroll to quote section and switch tabs
-        function scrollToQuote(tabName) {
-            // Scroll to quote section
-            document.getElementById('quote').scrollIntoView({
-                behavior: 'smooth'
+        // Wait for the DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set up click handlers for the hero buttons
+            document.querySelectorAll('.hero .cta-button').forEach(function(button) {
+                button.addEventListener('click', function() {
+                    // Determine which tab to show based on button text
+                    var tabName = this.textContent.includes('Senior') ? 'general' : 'term';
+                    
+                    // Scroll to quote section
+                    document.getElementById('quote').scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Wait for scroll to complete before switching tabs
+                    setTimeout(function() {
+                        // Hide all tab contents
+                        document.querySelectorAll('.tab-content').forEach(function(tab) {
+                            tab.classList.remove('active');
+                        });
+                        
+                        // Remove active class from all buttons
+                        document.querySelectorAll('.tab-button').forEach(function(btn) {
+                            btn.classList.remove('active');
+                        });
+                        
+                        // Show selected tab content
+                        document.getElementById(tabName + '-tab').classList.add('active');
+                        
+                        // Add active class to clicked button
+                        document.getElementById(tabName + '-button').classList.add('active');
+                    }, 500);
+                });
             });
             
-            // Wait for scroll to complete before switching tabs
-            setTimeout(function() {
-                switchTab(tabName);
-            }, 500);
-        }
-        
-        // Tab switching functionality for quote widget
-        function switchTab(tabName) {
-            // Hide all tab contents
-            var tabs = document.querySelectorAll('.tab-content');
-            for (var i = 0; i < tabs.length; i++) {
-                tabs[i].classList.remove('active');
-            }
-            
-            // Remove active class from all buttons
-            var buttons = document.querySelectorAll('.tab-button');
-            for (var i = 0; i < buttons.length; i++) {
-                buttons[i].classList.remove('active');
-            }
-            
-            // Show selected tab content
-            document.getElementById(tabName + '-tab').classList.add('active');
-            
-            // Add active class to clicked button
-            document.getElementById(tabName + '-button').classList.add('active');
-        }
-
-        // Page switching functionality for multi-page sections
-        function switchPage(section, pageNum) {
-            // Hide all page contents for this section
-            var pages = document.querySelectorAll('#' + section + ' .page-content');
-            for (var i = 0; i < pages.length; i++) {
-                pages[i].classList.remove('active');
-            }
-            
-            // Remove active class from all page buttons for this section
-            var buttons = document.querySelectorAll('#' + section + ' .page-button');
-            for (var i = 0; i < buttons.length; i++) {
-                buttons[i].classList.remove('active');
+            // Set up click handlers for the tab buttons
+            document.querySelectorAll('.widget-tabs .tab-button').forEach(function(button) {
+                button.addEventListener('click', function() {
+                    // Get the tab name from the button's id
+                    var tabName = this.id.replace('-button', '');
+                    
+                    // Hide all tab contents
+                    document.querySelectorAll('.tab-content').forEach(function(tab) {
+                        tab.classList.remove('active');
+                    });
+                    
+                    // Remove active class from all buttons
+                    document.querySelectorAll('.tab-button').forEach(function(btn) {
+                        btn.classList.remove('active');
+                    });
+                    
+                    // Show selected tab content
+                    document.getElementById(tabName + '-
