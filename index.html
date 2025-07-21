@@ -102,6 +102,7 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             margin: 0 10px;
+            cursor: pointer;
         }
 
         .cta-button:hover {
@@ -528,8 +529,8 @@
         <div class="container">
             <h1 class="fade-in">Independent Life Insurance Agent</h1>
             <p class="fade-in">I work for YOU, not the insurance companies. Let me shop from coast to coast to find you the best coverage and pricing.</p>
-            <a href="#quote" class="cta-button fade-in" onclick="activateTab('general')">Whole Senior Life Quote</a>
-            <a href="#quote" class="cta-button secondary fade-in" onclick="activateTab('term')">Term Life Quote</a>
+            <button class="cta-button fade-in" onclick="scrollToQuote('general')">Whole Senior Life Quote</button>
+            <button class="cta-button secondary fade-in" onclick="scrollToQuote('term')">Term Life Quote</button>
         </div>
     </section>
 
@@ -809,17 +810,32 @@
     </div>
 
     <script>
+        // Function to scroll to quote section and switch tabs
+        function scrollToQuote(tabName) {
+            // Scroll to quote section
+            document.getElementById('quote').scrollIntoView({
+                behavior: 'smooth'
+            });
+            
+            // Wait for scroll to complete before switching tabs
+            setTimeout(function() {
+                switchTab(tabName);
+            }, 500);
+        }
+        
         // Tab switching functionality for quote widget
         function switchTab(tabName) {
             // Hide all tab contents
-            document.querySelectorAll('.tab-content').forEach(tab => {
-                tab.classList.remove('active');
-            });
+            var tabs = document.querySelectorAll('.tab-content');
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove('active');
+            }
             
             // Remove active class from all buttons
-            document.querySelectorAll('.tab-button').forEach(button => {
-                button.classList.remove('active');
-            });
+            var buttons = document.querySelectorAll('.tab-button');
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove('active');
+            }
             
             // Show selected tab content
             document.getElementById(tabName + '-tab').classList.add('active');
@@ -828,38 +844,15 @@
             document.getElementById(tabName + '-button').classList.add('active');
         }
 
-        // Function to activate tab from hero buttons
-        function activateTab(tabName) {
-            // Scroll to quote section
-            document.getElementById('quote').scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-            
-            // Short delay to ensure scroll completes before switching tab
-            setTimeout(function() {
-                switchTab(tabName);
-            }, 500);
-        }
-
         // Page switching functionality for multi-page sections
         function switchPage(section, pageNum) {
             // Hide all page contents for this section
-            document.querySelectorAll(`#${section} .page-content`).forEach(page => {
-                page.classList.remove('active');
-            });
+            var pages = document.querySelectorAll('#' + section + ' .page-content');
+            for (var i = 0; i < pages.length; i++) {
+                pages[i].classList.remove('active');
+            }
             
             // Remove active class from all page buttons for this section
-            document.querySelectorAll(`#${section} .page-button`).forEach(button => {
-                button.classList.remove('active');
-            });
-            
-            // Show selected page content
-            document.getElementById(`${section}-page-${pageNum}`).classList.add('active');
-            
-            // Add active class to clicked button
-            event.currentTarget.classList.add('active');
-        }
-
-        // Smooth scrolling for navigation links
-        document.queryS
+            var buttons = document.querySelectorAll('#' + section + ' .page-button');
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].classList.
