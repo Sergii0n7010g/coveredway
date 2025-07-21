@@ -3,39 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Get personalized life insurance quotes from an independent agent who works for YOU, not the insurance companies. Compare rates from top providers instantly.">
-    <title>CoveredWay Insurance | Independent Life Insurance Quotes</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <title>Insurance Quotes | Sergii Kultyshev</title>
     <style>
-        /* Modern, professional styling */
-        :root {
-            --primary: #2E7D32;
-            --primary-light: #4CAF50;
-            --primary-dark: #1B5E20;
-            --secondary: #FF6B35;
-            --secondary-light: #FF8A65;
-            --text-dark: #333333;
-            --text-medium: #555555;
-            --text-light: #777777;
-            --background-light: #f8f9fa;
-            --white: #ffffff;
-            --shadow-sm: 0 2px 10px rgba(0,0,0,0.05);
-            --shadow-md: 0 5px 20px rgba(0,0,0,0.1);
-            --border-radius: 8px;
-        }
-        
+        /* Simple, clean styling */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Arial', sans-serif;
         }
         
         body {
-            background-color: var(--background-light);
-            color: var(--text-dark);
+            background-color: #f8f9fa;
+            color: #333;
             line-height: 1.6;
             padding-bottom: 50px; /* Space for logo ticker */
         }
@@ -46,16 +26,11 @@
             padding: 20px;
         }
         
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-        }
-        
-        /* Header & Navigation */
         header {
-            background-color: var(--white);
-            box-shadow: var(--shadow-sm);
-            padding: 15px 0;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 20px 0;
+            margin-bottom: 40px;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -67,25 +42,10 @@
             align-items: center;
         }
         
-        .logo-container {
-            display: flex;
-            align-items: center;
-        }
-        
         .logo {
             font-size: 24px;
-            font-weight: 700;
-            color: var(--primary);
-            font-family: 'Montserrat', sans-serif;
-            text-decoration: none;
-        }
-        
-        .tagline {
-            margin-left: 10px;
-            font-size: 14px;
-            color: var(--text-medium);
-            border-left: 1px solid #ddd;
-            padding-left: 10px;
+            font-weight: bold;
+            color: #5CB647;
         }
         
         .nav-links {
@@ -99,170 +59,78 @@
         
         .nav-links a {
             text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 600;
-            font-size: 15px;
+            color: #333;
+            font-weight: 500;
             transition: color 0.3s ease;
-            position: relative;
-            padding-bottom: 5px;
         }
         
         .nav-links a:hover {
-            color: var(--primary);
+            color: #5CB647;
         }
         
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: var(--primary);
-            transition: width 0.3s ease;
+        .contact-info {
+            text-align: right;
         }
         
-        .nav-links a:hover::after {
-            width: 100%;
+        .contact-info p {
+            margin: 5px 0;
         }
         
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 24px;
-            cursor: pointer;
-            color: var(--text-dark);
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-            color: var(--white);
-            padding: 60px 0;
-            margin-bottom: 40px;
-            text-align: center;
-            border-radius: 0 0 var(--border-radius) var(--border-radius);
-        }
-        
-        .hero h1 {
-            font-size: 42px;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-        
-        .hero p {
-            font-size: 18px;
-            max-width: 800px;
-            margin: 0 auto 30px;
-            opacity: 0.9;
-        }
-        
-        .hero-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 30px;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background: var(--secondary);
-            color: var(--white);
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            text-align: center;
-        }
-        
-        .cta-button:hover {
-            background: var(--secondary-light);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.25);
-        }
-        
-        .cta-button.secondary {
-            background: transparent;
-            border: 2px solid var(--white);
-        }
-        
-        .cta-button.secondary:hover {
-            background: rgba(255,255,255,0.1);
-        }
-        
-        /* Quote Section */
+        /* Quote section with padding to prevent header overlap */
         #Quote {
-            padding-top: 80px;
-            margin-top: -80px;
-            scroll-margin-top: 100px;
+            padding-top: 80px; /* Added padding to prevent header overlap */
+            margin-top: -80px; /* Offset the padding to maintain layout */
+            scroll-margin-top: 100px; /* This helps with smooth scrolling */
         }
         
-        .section-header {
+        h1 {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
+            color: #333;
+            font-size: 36px;
         }
         
-        .section-header h2 {
-            font-size: 32px;
-            color: var(--text-dark);
-            margin-bottom: 15px;
-        }
-        
-        .section-header p {
+        .intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 40px;
             font-size: 18px;
-            color: var(--text-medium);
-            max-width: 700px;
-            margin: 0 auto;
+            color: #555;
         }
         
         .tabs {
             display: flex;
             justify-content: center;
-            margin-bottom: 30px;
-            background: var(--white);
-            padding: 5px;
-            border-radius: 50px;
-            box-shadow: var(--shadow-sm);
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            margin-bottom: 20px;
         }
         
         .tab-button {
             padding: 15px 30px;
-            font-size: 16px;
-            background: transparent;
+            font-size: 18px;
+            background-color: #e9ecef;
             border: none;
             cursor: pointer;
-            font-weight: 600;
+            font-weight: bold;
             transition: all 0.3s ease;
-            border-radius: 50px;
-            color: var(--text-medium);
-            flex: 1;
+            border-radius: 5px;
+            margin: 0 10px;
         }
         
         .tab-button:hover {
-            color: var(--primary);
+            background-color: #dee2e6;
         }
         
         .tab-button.active {
-            background: var(--primary);
-            color: var(--white);
-            box-shadow: var(--shadow-sm);
+            background-color: #5CB647;
+            color: white;
         }
         
         .tab-content {
             display: none;
-            background: var(--white);
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow-md);
-            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            padding: 20px;
             margin-bottom: 40px;
         }
         
@@ -270,134 +138,21 @@
             display: block;
         }
         
-        .tab-content h3 {
+        .tab-content h2 {
             text-align: center;
             margin-bottom: 20px;
-            color: var(--text-dark);
-            font-size: 24px;
+            color: #333;
         }
         
         .tab-content p {
             text-align: center;
             margin-bottom: 20px;
-            color: var(--text-medium);
-        }
-        
-        /* Trust Indicators */
-        .trust-indicators {
-            background: var(--white);
-            padding: 40px 0;
-            margin: 60px 0;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow-sm);
-        }
-        
-        .trust-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .trust-item {
-            text-align: center;
-            padding: 20px;
-        }
-        
-        .trust-icon {
-            font-size: 40px;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-        
-        .trust-item h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
-            color: var(--text-dark);
-        }
-        
-        .trust-item p {
-            font-size: 14px;
-            color: var(--text-medium);
-        }
-        
-        /* Testimonials */
-        .testimonials {
-            padding: 60px 0;
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-            margin: 60px 0;
-            border-radius: var(--border-radius);
-        }
-        
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .testimonial-card {
-            background: var(--white);
-            padding: 30px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow-sm);
-            position: relative;
-        }
-        
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 20px;
-            color: var(--text-medium);
-            position: relative;
-            padding-left: 25px;
-        }
-        
-        .testimonial-text::before {
-            content: '"';
-            font-size: 50px;
-            color: var(--primary-light);
-            opacity: 0.3;
-            position: absolute;
-            left: 0;
-            top: -15px;
-        }
-        
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-        }
-        
-        .author-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: #ddd;
-            margin-right: 15px;
-            overflow: hidden;
-        }
-        
-        .author-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .author-info h4 {
-            font-size: 16px;
-            margin-bottom: 5px;
-            color: var(--text-dark);
-        }
-        
-        .author-info p {
-            font-size: 14px;
-            color: var(--text-light);
+            color: #666;
         }
         
         /* Logo Ticker */
         .logo-ticker {
-            background: var(--white);
+            background: white;
             height: 36px;
             overflow: hidden;
             white-space: nowrap;
@@ -438,10 +193,16 @@
         
         /* Section styling */
         .section {
-            padding-top: 80px;
+            padding-top: 80px; /* Increased padding to prevent header overlap */
             margin-top: 40px;
             border-top: 1px solid #e9ecef;
-            scroll-margin-top: 100px;
+            scroll-margin-top: 100px; /* This helps with smooth scrolling to prevent header overlap */
+        }
+        
+        .section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
         }
         
         .section-content {
@@ -452,23 +213,18 @@
         /* About section with photo */
         .about-flex {
             display: flex;
-            gap: 40px;
-            align-items: center;
+            gap: 30px;
+            align-items: center; /* Changed to center alignment */
             max-width: 800px;
             margin: 0 auto;
-            background: var(--white);
-            padding: 40px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow-md);
         }
         
         .about-photo {
-            width: 180px;
+            width: 150px;
             flex-shrink: 0;
-            box-shadow: var(--shadow-md);
-            border-radius: var(--border-radius);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 10px;
             overflow: hidden;
-            border: 3px solid var(--white);
         }
         
         .about-photo img {
@@ -476,75 +232,33 @@
             display: block;
         }
         
-        .about-content h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
-            color: var(--text-dark);
-        }
-        
-        .about-content p {
-            margin-bottom: 15px;
-            color: var(--text-medium);
-        }
-        
-        .credentials {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .credential-badge {
-            background: #f0f8f0;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 14px;
-            color: var(--primary);
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-        }
-        
-        .credential-badge i {
-            margin-right: 5px;
-        }
-        
         /* Page navigation */
         .page-navigation {
             display: flex;
             justify-content: center;
-            margin: 30px 0;
+            margin: 20px 0;
             gap: 10px;
         }
         
         .page-button {
-            background: var(--white);
-            border: 1px solid #ddd;
-            padding: 10px 20px;
-            border-radius: 30px;
+            background: #e9ecef;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
             cursor: pointer;
             font-weight: 600;
-            color: var(--text-medium);
+            color: #666;
             transition: all 0.3s ease;
         }
         
-        .page-button:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-        }
-        
         .page-button.active {
-            background: var(--primary);
-            color: var(--white);
-            border-color: var(--primary);
+            background: #5CB647;
+            color: white;
         }
         
         .page-content {
             display: none;
             text-align: center;
-            background: var(--white);
-            padding: 30px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow-md);
         }
         
         .page-content.active {
@@ -554,95 +268,29 @@
         .page-content img {
             max-width: 100%;
             height: auto;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow-sm);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             margin: 0 auto;
         }
         
-        /* FAQ Accordion */
-        .faq-accordion {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .faq-item {
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-        }
-        
-        .faq-question {
-            padding: 20px;
-            background: var(--white);
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 600;
-            color: var(--text-dark);
-            transition: background 0.3s ease;
-        }
-        
-        .faq-question:hover {
-            background: #f5f5f5;
-        }
-        
-        .faq-question::after {
-            content: '+';
-            font-size: 20px;
-            color: var(--primary);
-        }
-        
-        .faq-item.active .faq-question::after {
-            content: '-';
-        }
-        
-        .faq-answer {
-            padding: 0 20px;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease;
-        }
-        
-        .faq-item.active .faq-answer {
-            padding: 0 20px 20px;
-            max-height: 500px;
-        }
-        
-        /* Footer */
         footer {
-            background-color: var(--white);
-            padding: 60px 0 20px;
+            background-color: white;
+            padding: 20px 0;
             text-align: center;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
-            margin-top: 60px;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            margin-top: 40px;
         }
         
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-            text-align: left;
+            gap: 2rem;
+            margin-bottom: 2rem;
         }
         
         .footer-section h4 {
-            margin-bottom: 20px;
-            color: var(--primary);
-            font-size: 18px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        .footer-section h4::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 2px;
-            background: var(--primary);
+            margin-bottom: 1rem;
+            color: #5CB647;
         }
         
         .footer-section ul {
@@ -650,96 +298,31 @@
         }
         
         .footer-section ul li {
-            margin-bottom: 10px;
+            margin-bottom: 0.5rem;
         }
         
         .footer-section ul li a {
-            color: var(--text-medium);
+            color: #666;
             text-decoration: none;
             transition: color 0.3s ease;
-            display: inline-block;
         }
         
         .footer-section ul li a:hover {
-            color: var(--primary);
-            transform: translateX(3px);
-        }
-        
-        .footer-section p {
-            color: var(--text-medium);
-            margin-bottom: 10px;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .social-link {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background: #f5f5f5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-medium);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .social-link:hover {
-            background: var(--primary);
-            color: var(--white);
-            transform: translateY(-3px);
+            color: #5CB647;
         }
         
         .footer-bottom {
             text-align: center;
-            padding-top: 30px;
+            padding-top: 2rem;
             border-top: 1px solid #e9ecef;
-            color: var(--text-light);
+            color: #666;
             margin-bottom: 36px;
-            font-size: 14px;
-        }
-        
-        .footer-bottom p {
-            margin-bottom: 10px;
-        }
-        
-        .footer-bottom a {
-            color: var(--primary);
-            text-decoration: none;
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 36px;
-            }
-            
-            .hero p {
-                font-size: 16px;
-            }
-            
-            .about-flex {
-                padding: 30px;
-            }
         }
         
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
                 text-align: center;
-            }
-            
-            .logo-container {
-                margin-bottom: 15px;
-            }
-            
-            .tagline {
-                display: none;
             }
             
             .nav-links {
@@ -752,96 +335,45 @@
                 margin: 5px 10px;
             }
             
-            .hero {
-                padding: 40px 0;
-            }
-            
-            .hero h1 {
-                font-size: 30px;
-            }
-            
-            .hero-buttons {
-                flex-direction: column;
-                gap: 15px;
+            .contact-info {
+                text-align: center;
+                margin-top: 15px;
             }
             
             .tabs {
                 flex-direction: column;
-                border-radius: var(--border-radius);
             }
             
             .tab-button {
-                border-radius: 0;
-            }
-            
-            .tab-button:first-child {
-                border-radius: var(--border-radius) var(--border-radius) 0 0;
-            }
-            
-            .tab-button:last-child {
-                border-radius: 0 0 var(--border-radius) var(--border-radius);
+                margin: 5px 0;
             }
             
             .about-flex {
                 flex-direction: column;
+                align-items: center;
                 text-align: center;
-                padding: 20px;
             }
             
             .about-photo {
                 margin-bottom: 20px;
             }
             
-            .credentials {
-                justify-content: center;
-                flex-wrap: wrap;
-            }
-            
             .footer-content {
                 grid-template-columns: 1fr;
                 text-align: center;
-                gap: 30px;
-            }
-            
-            .footer-section h4::after {
-                left: 50%;
-                transform: translateX(-50%);
-            }
-            
-            .social-links {
-                justify-content: center;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 26px;
-            }
-            
-            .section-header h2 {
-                font-size: 26px;
-            }
-            
-            .tab-content {
-                padding: 20px;
             }
         }
     </style>
-    <!-- Font Awesome for icons -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
         <div class="container">
             <div class="header-content">
-                <div class="logo-container">
-                    <a href="#" class="logo">CoveredWay</a>
-                    <span class="tagline">Independent Insurance Solutions</span>
-                </div>
+                <div class="logo">Sergii Kultyshev</div>
                 <ul class="nav-links">
-                    <li><a href="#Quote">Get Quote</a></li>
+                    <li><a href="#Quote">Quote</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#stories">Success Stories</a></li>
+                    <li><a href="#stories">Stories</a></li>
                     <li><a href="#faq">FAQ</a></li>
                     <li><a href="#yourself">Recognize Yourself</a></li>
                     <li><a href="#partners">Partners</a></li>
@@ -851,24 +383,13 @@
         </div>
     </header>
     
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>Life Insurance That Works For You, Not The Companies</h1>
-            <p>As an independent agent, I shop from coast to coast to find you the best coverage at the most competitive rates. Get personalized quotes in minutes.</p>
-            <div class="hero-buttons">
-                <a href="#Quote" class="cta-button">Get Your Free Quote Now</a>
-                <a href="#about" class="cta-button secondary">Learn How I Can Help</a>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Quote Section -->
-    <section id="Quote" class="container">
-        <div class="section-header">
-            <h2>Compare Life Insurance Quotes</h2>
-            <p>Get instant quotes from top-rated insurance providers. No obligation, no personal information required to see rates.</p>
-        </div>
+    <div class="container" id="Quote">
+        <h1>Get Your Insurance Quote</h1>
+        
+        <p class="intro">
+            As an independent insurance agent, I work for YOU, not the insurance companies. 
+            Let me help you find the best coverage at the best price.
+        </p>
         
         <div class="tabs">
             <button id="term-button" class="tab-button active" onclick="switchTab('term')">Term Life Insurance</button>
@@ -876,7 +397,7 @@
         </div>
         
         <div id="term-tab" class="tab-content active">
-            <h3>Term Life Insurance Quote</h3>
+            <h2>Term Life Insurance Quote</h2>
             <p>Get affordable coverage for a specific period of time</p>
             
             <!-- Term Lite Widget -->
@@ -886,7 +407,7 @@
         </div>
         
         <div id="senior-tab" class="tab-content">
-            <h3>Senior Life Insurance Quote</h3>
+            <h2>Senior Life Insurance Quote</h2>
             <p>Compare rates for permanent life insurance coverage</p>
             
             <!-- FEX Lite Widget -->
@@ -894,93 +415,216 @@
               src="https://insurancetoolkits.com/fex/lite-form/?token=QV2Ql_QsHx2eMmmz4lBYPr7G2wyzSXF9XgNM2iRO">
             </iframe>
         </div>
-    </section>
-    
-    <!-- Trust Indicators Section -->
-    <section class="trust-indicators">
-        <div class="container">
-            <div class="section-header">
-                <h2>Why Choose an Independent Agent?</h2>
-                <p>I work for you, not the insurance companies</p>
-            </div>
-            <div class="trust-grid">
-                <div class="trust-item">
-                    <div class="trust-icon">
-                        <i class="fas fa-search-dollar"></i>
-                    </div>
-                    <h3>Compare Multiple Carriers</h3>
-                    <p>I shop from 15+ top-rated insurance companies to find you the best rates.</p>
-                </div>
-                <div class="trust-item">
-                    <div class="trust-icon">
-                        <i class="fas fa-hand-holding-usd"></i>
-                    </div>
-                    <h3>No Extra Cost</h3>
-                    <p>My services are completely free to you - I'm paid by the insurance company you choose.</p>
-                </div>
-                <div class="trust-item">
-                    <div class="trust-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Licensed in 14 States</h3>
-                    <p>Fully licensed insurance professional with years of experience helping families.</p>
-                </div>
-                <div class="trust-item">
-                    <div class="trust-icon">
-                        <i class="fas fa-user-friends"></i>
-                    </div>
-                    <h3>Personalized Service</h3>
-                    <p>Get one-on-one guidance throughout the entire process, from quote to policy.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    </div>
     
     <!-- About Section -->
     <section id="about" class="container section">
-        <div class="section-header">
-            <h2>About Sergii Kultyshev</h2>
-            <p>Your dedicated independent insurance advisor</p>
-        </div>
+        <h2>About Sergii Kultyshev</h2>
         <div class="about-flex">
             <div class="about-photo">
-                <img src="photo.jpg" alt="Sergii Kultyshev - Independent Insurance Agent">
+                <img src="photo.jpg" alt="Sergii Kultyshev">
             </div>
-            <div class="about-content">
-                <h3>Hi, I'm Sergii</h3>
-                <p>
-                    As an independent life insurance agent licensed in 14 states, I help families across the United States 
-                    secure critical protection for their loved ones through life insurance. I take pride in providing prompt service 
+            <div>
+                <p style="margin-bottom: 20px;">
+                    Sergii Kultyshev is an independent life insurance agent licensed in 14 states and helps families across the United States 
+                    to secure critical protection for their loved ones through life insurance. He takes pride in providing prompt service 
                     and wise guidance to effectively protect individuals and families.
                 </p>
                 <p>
-                    Unlike captive agents who work for a single company, I work for YOU. I collaborate with over 15 
-                    top-rated insurance carriers to ensure you have the best possible coverage at the most competitive rates.
+                    As an independent agent, Sergii works for YOU, not tied to any single insurance company. He collaborates with over 15 
+                    top-rated insurance carriers to ensure you have the best possible life insurance coverage.
                 </p>
-                <div class="credentials">
-                    <span class="credential-badge"><i class="fas fa-certificate"></i> Licensed in 14 States</span>
-                    <span class="credential-badge"><i class="fas fa-id-card"></i> NPN: 21204385</span>
-                </div>
             </div>
         </div>
     </section>
     
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <h2>What My Clients Say</h2>
-                <p>Real stories from families I've helped protect</p>
+    <!-- Stories Section -->
+    <section id="stories" class="container section">
+        <h2>Stories</h2>
+        <div class="section-content">
+            <div class="page-navigation">
+                <button class="page-button active" onclick="switchPage('stories', 1)">Page 1</button>
+                <button class="page-button" onclick="switchPage('stories', 2)">Page 2</button>
+                <button class="page-button" onclick="switchPage('stories', 3)">Page 3</button>
             </div>
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        Sergii made the whole process so easy. He found me a policy that was $30 less per month than what I was quoted elsewhere, with better coverage!
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael R.">
-                        </div>
-                        
-
-_Note: `image.png` was excluded from the analysis due to size limit. Please upload again or start a new conversation if your question is related to it._
+            
+            <div id="stories-page-1" class="page-content active">
+                <img src="story1.jpg" alt="Client Story 1">
+            </div>
+            
+            <div id="stories-page-2" class="page-content">
+                <img src="story2.jpg" alt="Client Story 2">
+            </div>
+            
+            <div id="stories-page-3" class="page-content">
+                <img src="story3.jpg" alt="Client Story 3">
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section id="faq" class="container section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="section-content">
+            <div class="page-navigation">
+                <button class="page-button active" onclick="switchPage('faq', 1)">Page 1</button>
+                <button class="page-button" onclick="switchPage('faq', 2)">Page 2</button>
+            </div>
+            
+            <div id="faq-page-1" class="page-content active">
+                <img src="faq1.jpg" alt="FAQ Page 1">
+            </div>
+            
+            <div id="faq-page-2" class="page-content">
+                <img src="faq2.jpg" alt="FAQ Page 2">
+            </div>
+        </div>
+    </section>
+    
+    <!-- Recognize Yourself Section -->
+    <section id="yourself" class="container section">
+        <h2>Recognize Yourself</h2>
+        <div class="section-content">
+            <div id="yourself-page-1" class="page-content active">
+                <img src="see1.jpg" alt="Recognize Yourself">
+            </div>
+        </div>
+    </section>
+    
+    <!-- Partners Section -->
+    <section id="partners" class="container section">
+        <h2>Partners</h2>
+        <div class="section-content">
+            <div id="partners-page-1" class="page-content active">
+                <img src="partners.jpg" alt="Our Partners">
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Contact Sergii Kultyshev</h4>
+                    <ul>
+                        <li>📞 1-929-877-9541</li>
+                        <li>✉️ sergii@coveredway.com</li>
+                        <li>📍 New York, NY</li>
+                        <li>🏢 National Producer Number 21204385 
+                            Licensed in 14 States</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#Quote">Quote</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#stories">Stories</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#yourself">Recognize Yourself</a></li>
+                        <li><a href="#partners">Partners</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Insurance Products</h4>
+                    <ul>
+                        <li><a href="#term-tab">Term Life Insurance</a></li>
+                        <li><a href="#senior-tab">Senior Life Insurance</a></li>
+                        <li><a href="#">Universal Life</a></li>
+                        <li><a href="#">Final Expense</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Sergii Kultyshev. All rights reserved. | Independent Licensed Insurance Agent</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Logo Ticker (Fixed at bottom) -->
+    <div class="logo-ticker">
+        <div class="logo-ticker-content">
+            <img src="logos/Mutual-of-Omaha.png" alt="Mutual of Omaha">
+            <img src="logos/AIG.png" alt="AIG">
+            <img src="logos/Foresters-Financial.png" alt="Foresters Financial">
+            <img src="logos/Gerber-Life-Insurance.png" alt="Gerber Life Insurance">
+            <img src="logos/CICA-Life-of-America.png" alt="CICA Life of America">
+            <img src="logos/American-Amicable.png" alt="American-Amicable">
+            <img src="logos/Transamerica.png" alt="Transamerica">
+            <img src="logos/GTL.png" alt="GTL">
+            <img src="logos/SBLI.png" alt="SBLI">
+            <img src="logos/Royal-Neighbors-of-America.png" alt="Royal Neighbors of America">
+            <img src="logos/Protective.png" alt="Protective">
+            <img src="logos/Aflac.png" alt="Aflac">
+            <img src="logos/Mutual-of-Omaha.png" alt="Mutual of Omaha">
+            <img src="logos/AIG.png" alt="AIG">
+            <img src="logos/Foresters-Financial.png" alt="Foresters Financial">
+            <img src="logos/Gerber-Life-Insurance.png" alt="Gerber Life Insurance">
+            <img src="logos/CICA-Life-of-America.png" alt="CICA Life of America">
+            <img src="logos/American-Amicable.png" alt="American-Amicable">
+            <img src="logos/Transamerica.png" alt="Transamerica">
+            <img src="logos/GTL.png" alt="GTL">
+            <img src="logos/SBLI.png" alt="SBLI">
+            <img src="logos/Royal-Neighbors-of-America.png" alt="Royal Neighbors of America">
+            <img src="logos/Protective.png" alt="Protective">
+            <img src="logos/Aflac.png" alt="Aflac">
+        </div>
+    </div>
+    
+    <script>
+        // Tab switching function
+        function switchTab(tabName) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(function(tab) {
+                tab.style.display = 'none';
+                tab.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.tab-button').forEach(function(button) {
+                button.classList.remove('active');
+            });
+            
+            // Show the selected tab
+            document.getElementById(tabName + '-tab').style.display = 'block';
+            document.getElementById(tabName + '-tab').classList.add('active');
+            
+            // Add active class to the clicked button
+            document.getElementById(tabName + '-button').classList.add('active');
+        }
+        
+        // Page switching function
+        function switchPage(section, pageNum) {
+            // Hide all pages in this section
+            document.querySelectorAll('#' + section + ' .page-content').forEach(function(page) {
+                page.style.display = 'none';
+                page.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons in this section
+            document.querySelectorAll('#' + section + ' .page-button').forEach(function(button) {
+                button.classList.remove('active');
+            });
+            
+            // Show the selected page
+            document.getElementById(section + '-page-' + pageNum).style.display = 'block';
+            document.getElementById(section + '-page-' + pageNum).classList.add('active');
+            
+            // Add active class to the clicked button
+            document.querySelectorAll('#' + section + ' .page-button')[pageNum - 1].classList.add('active');
+        }
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
