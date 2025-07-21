@@ -103,6 +103,7 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             margin: 0 10px;
             cursor: pointer;
+            border: none;
         }
 
         .cta-button:hover {
@@ -809,9 +810,6 @@
         </div>
     </div>
 
-       <!-- Logo Ticker content here -->
-    </div>
-
     <script>
         // Function to scroll to quote section and switch tabs
         function scrollToQuote(tabName) {
@@ -858,49 +856,4 @@
             // Remove active class from all page buttons for this section
             var buttons = document.querySelectorAll('#' + section + ' .page-button');
             for (var i = 0; i < buttons.length; i++) {
-                buttons[i].classList.remove('active');
-            }
-            
-            // Show selected page content
-            document.getElementById(section + '-page-' + pageNum).classList.add('active');
-            
-            // Add active class to clicked button
-            event.currentTarget.classList.add('active');
-        }
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                var target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Add fade-in animation on scroll
-        var observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        var observer = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all feature cards
-        document.querySelectorAll('.feature-card').forEach(function(card) {
-            observer.observe(card);
-        });
-    </script>
-</body>
-</html>
+                buttons[i
